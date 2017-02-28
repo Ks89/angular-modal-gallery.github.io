@@ -1,0 +1,87 @@
+<div class="jumbotron jumbotron-fluid title">
+  <div class="container">
+    <h1>Getting Started</h1>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-3 push-md-9">
+      sidebar
+    </div>
+    <div class="col-12 col-md-9 pull-md-3">
+
+      <h3>Dependencies</h3>
+      <p>The only required dependencies are:</p>
+      <ul>
+        <li>Angular (requires Angular version 2 or higher, tested with 2.4.8)</li>
+        <li>Rxjs 5.0.0 or higher</li>
+        <li>font-awesome (tested with font-awesome 4.7.0)</li>
+        <li>hammerjs</li>
+        <li>mousetrap</li>
+      </ul>
+
+      <h3>Installation</h3>
+      <p>After installing the above dependencies, install <code>angular-modal-gallery</code> via:
+        <code>npm install --save angular-modal-gallery</code>.</p>
+      <p>Once installed you need to import the main module and both hammerjs and mousetrap.</p>
+      <pre>
+        import 'hammerjs';
+        import 'mousetrap';
+        import {{'{'}} ModalGalleryModule {{'}'}} from 'angular-modal-gallery';
+      </pre>
+      <p>The only remaining part is to list the imported module in your root module and any additional application modules that make use use of the components in this library. The exact method will be slightly different for the root (top-level) module for which you should end up with the code similar to (notice <code>ModalGalleryModule.forRoot()</code>):</p>
+      <pre>
+        import 'hammerjs';
+        import 'mousetrap';
+        import {{'{'}}ModalGalleryModule{{'}'}} from 'angular-modal-gallery';
+        @NgModule({{'{'}}
+          imports: [ModalGalleryModule.forRoot(), ...],
+          declarations: [ AppComponent, ... ],
+          providers: [ ... ],
+          bootstrap: [ AppComponent ]
+        {{'}'}})
+        export class AppModule {{'{'}}{{'}'}}
+      </pre>
+      <p>Other modules in your application can simply import ModalGalleryModule:</p>
+      <pre>
+        import {{'{'}}ModalGalleryModule} from 'angular-modal-gallery';
+
+        @NgModule({{'{'}}
+          imports: [ModalGalleryModule, ...],
+          declarations: [ AnotherComponent, ... ]
+        {{'}'}})
+        export class OtherModule {{'{'}}{{'}'}}
+      </pre>
+
+      <h4>SystemJS</h4>
+      <p>If you are using SystemJS, you should also adjust your configuration to point to the UMD bundle.</p>
+      <p>In your systemjs config file, add both map and packages to tell the System loader where to look for libraries:</p>
+      <pre>
+        map: {{'{'}}
+          'hammerjs'                  : 'node_modules/hammerjs',
+          'mousetrap'                 : 'node_modules/mousetrap'
+          'angular-modal-gallery'     : 'node_modules/angular-modal-gallery/dist/bundles',
+        {{'}'}}
+
+        packages = {{'{'}}
+          'hammerjs'                  : {{'{'}} main: 'hammer.js' {{'}'}},
+          'mousetrap'                 : {{'{'}} main: 'mousetrap.js' {{'}'}},
+          'angular-modal-gallery'     : {{'{'}} main: 'angular-modal-gallery.umd.js' {{'}'}}
+        {{'}'}}
+      </pre>
+
+      <h3>Getting Help</h3>
+      <p>Do you need help? Open an issue on GitHub!</p>
+
+      <h3>Contributing</h3>
+      <p>Please check <code>CONTRIBUTING.md</code> for contribution guidelines. Additionally, for local building and
+        testing information, please see <code>DEVELOPER.md</code>.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
