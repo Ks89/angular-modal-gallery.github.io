@@ -25,13 +25,11 @@
 import { NotFound404Component } from './404/not-found404.component';
 import { HomeComponent } from './home/home.component';
 import { GettingStartedComponent } from "./getting-started/getting-started.component";
-import { FeaturesComponent } from "./features/features.component";
 import { DemoComponent } from "./demo/demo.component";
 
 export const COMPONENTS = [
   NotFound404Component,
   HomeComponent,
   GettingStartedComponent,
-  FeaturesComponent,
   DemoComponent
 ];

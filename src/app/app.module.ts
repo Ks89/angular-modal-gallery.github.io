@@ -56,7 +56,6 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     SharedModule,
-
     ModalGalleryModule.forRoot() // <-------------------------------------------- angular-modal-gallery module import
   ],
   declarations: [

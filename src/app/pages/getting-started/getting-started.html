@@ -7,7 +7,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 col-md-3 push-md-9">
-      sidebar
+      <p><a [routerLink]="['/gettingStarted']">Getting Started</a></p>
+      <p><a [routerLink]="['/features']">Features</a></p>
+      <ul>
+        <li><a [routerLink]="['/features/galleryArray']">Gallery (array)</a></li>
+        <li><a [routerLink]="['/features/galleryObservable']">Gallery (Observable)</a></li>
+        <li><a [routerLink]="['/features/galleryDescription']">Gallery description</a></li>
+        <li><a [routerLink]="['/features/download']">Download</a></li>
+        <li><a [routerLink]="['/features/externalUrl']">External URL</a></li>
+      </ul>
     </div>
     <div class="col-12 col-md-9 pull-md-3">
 
@@ -54,7 +62,14 @@
         export class OtherModule {{'{'}}{{'}'}}
       </pre>
 
+      <h4>Webpack 2</h4>
+      <p>If you are using Webpack 2, you should see to the official demo. Also, remember that this entire website is made with Webpack2. So, I really recommend Webpack 2 if you want to use this library.</p>
+
+      <h4>Angular-cli</h4>
+      <p>If you are using Angular-cli, you should see to the official demo.</p>
+
       <h4>SystemJS</h4>
+      <small>Don't use SystemJS in production!</small>
       <p>If you are using SystemJS, you should also adjust your configuration to point to the UMD bundle.</p>
       <p>In your systemjs config file, add both map and packages to tell the System loader where to look for libraries:</p>
       <pre>

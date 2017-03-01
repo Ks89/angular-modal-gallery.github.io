@@ -26,14 +26,19 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFound404Component } from './pages/404/not-found404.component';
 import { GettingStartedComponent } from "./pages/getting-started/getting-started.component";
-import { FeaturesComponent } from "./pages/features/features.component";
 import { DemoComponent } from "./pages/demo/demo.component";
 
 export const ROUTES: Routes = [
   {path: '',                                component: HomeComponent},
   {path: 'home',                            component: HomeComponent},
   {path: 'gettingStarted',                  component: GettingStartedComponent},
-  {path: 'features',                        component: FeaturesComponent},
+
+  {
+    path: 'features',
+    loadChildren: './pages/features/features.module#FeaturesModule',
+    data: { preload: true }
+  },
+
   {path: 'demo',                            component: DemoComponent},
   {path: 'lazy',                            loadChildren: './pages/lazy/lazy.module#LazyModule'},
   {path: '**',                              component: NotFound404Component}
