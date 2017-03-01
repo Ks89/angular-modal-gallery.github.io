@@ -18,7 +18,7 @@
     "build:dev": "webpack --config config/webpack.dev.js --colors --progress --display-error-details --display-cached --profile",
     "build:prod": "webpack --config config/webpack.prod.js --colors --progress --display-error-details --display-cached --profile",
     "build:prod:aot": "npm run clean-awcache && npm run clean-aot && webpack --config config/webpack.prod.js --colors --progress --display-error-details --display-cached --profile",
-    "clean": "npm run clean-build && npm run clean-coverage && npm run clean-aot && npm run clean-awcache",
+    "clean": "npm run clean-build && npm run clean-coverage && npm run clean-aot && npm run clean-awcache && npm run clean-dll",
     "clean-build": "rimraf dist",
     "clean-coverage": "rimraf coverage",
     "clean-dll": "rimraf dll",
@@ -150,6 +150,7 @@
     "webdriver-manager": "^12.0.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
+    "webpack-dll-bundles-plugin": "^1.0.0-beta.5",
     "webpack-manifest-plugin": "^1.1.0",
     "webpack-md5-hash": "^0.0.5",
     "webpack-merge": "^3.0.0"
