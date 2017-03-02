@@ -32,3 +32,9 @@
     color: white;
   }
 }
+
+.text-shadow {
+  text-shadow: -4px 0 #fff, -3px 0 #fff, -2px 0 #fff, -1px 0 #fff, 0 0 #fff, 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, 4px 0 #fff;
+  //box-shadow: 0 1px #fff, 0 3px #0275d8;
+  //display: table;
+}

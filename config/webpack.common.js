@@ -39,7 +39,7 @@ const ScriptExtHtmlWebpackPlugin   = require('script-ext-html-webpack-plugin');
 const HtmlElementsPlugin           = require('./html-elements-plugin');
 
 const helpers                      = require('./helpers');
-const TITLE                        = 'My MEAN Website';
+const TITLE                        = 'angular-modal-gallery';
 const TEMPLATE_PATH                = './src/index.ejs';
 const TEMPLATE_HTML                = 'index.html';
 

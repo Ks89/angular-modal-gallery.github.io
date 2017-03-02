@@ -1,9 +1,171 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<section class="container">
 
-      <h3>Gallery array page</h3>
+  <!-- TODO Change features title (h1 text) with this <h1>Modal gallery</h1>-->
 
-    </div>
-  </div>
-</div>
+  <!-- TODO Add link to github sources -->
+  <!-- Add dark green hover effect on text -->
+  <a href="#"><u class="text-success"><h1 class="text-success">ModalGallery</h1></u></a>
+  <p>The ModalGallery component is a collection of Images. It displays all (or some) images as
+    thumbnails in a single row. Clicking on one of them, the image will be showed in full screen in a modal way.</p>
+  <p>In addition to this, ModalGallery provides navigation between modal images with both mouse and keyboard and it
+    can enable/disable download features. To conclude, it is also possible to configure descriptions and to add a button
+    to navigate to an external url.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td>Selector</td>
+      <td><code>modal-gallery</code></td>
+    </tr>
+    <tr>
+      <td>Exported as</td>
+      <td><code>modalGallery</code></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <section>
+    <h3>Inputs</h3>
+    <table class="table table-hover table-sm">
+      <tbody>
+      <tr>
+        <td><code>modalImages</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>Array&lt;<code><a href="#">Image</a></code>&gt; | Observable&lt;Array&lt;<code><a
+            href="#">Image</a></code>&gt;&gt;</code>
+          </div>
+          <div>
+            An array of <code>Image</code> objects or an Observable or it that represent both the thumb gallery and the
+            modal
+            images. In fact, an <code>Image</code> is an object with both thumb and
+            image source paths. For more info about <code>Image</code>, please check <a href="#">HERE</a>.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>imagePointer</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>number</code>
+          </div>
+          <div>
+            <b>TODO write doc TODO write docTODO write docTODO write docTODO write docTODO write docTODO write docTODO
+              write doc
+              TODO write docTODO write docTODO write docTODO write docTODO write docTODO write doc</b>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>downloadable</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>boolean</code>
+          </div>
+          <div>
+            <p>If true, you'll be able to download the current modal image always with keyboard shortcut (<i>ctrl+s</i>
+              or <i>cmd+s</i>),
+              but the download button will be displayed only if <code>showDownloadButton</code> will be true. Otherwise,
+              all download features will be disabled. <code>downloadable=false</code> by default</p>
+            <p>Please be careful: on SmartPhones and Tablets you can't use keyboard shortcuts, so if you want to enable
+              your
+              users to download your images, please enable both <code>downloadable</code> and
+              <code>showDownloadButton</code> to add the download button.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>description</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code><a href="#">Description</a></code> interface
+          </div>
+          <div>
+            Interface to specify a custom description either a full string or an object with string properties.
+            <ul>
+              <li>full: it's the entire string. For instance, 'Description of Image 1/2 - My family - bla bla'</li>
+              <li>object used to compose the description, for instance in this way:
+                `<code>imageText</code>2<code>numberSeparator</code>12<code>beforeTextDescription</code>bla bla`,
+                where `2` is the index of the visible image, `12` the total number of images and `bla bla`
+                the description passed thanks to the input <code>Image</code> object.
+                <ul>
+                  <li>imageText (default is 'Image')</li>
+                  <li>numberSeparator (default is '/')</li>
+                  <li>beforeTextDescription: (default is ' - ')</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>showDownloadButton</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>boolean</code>
+          </div>
+          <div>
+            <p>If both <code>downloadable</code> and <code>showDownloadButton</code> are true,
+              the download button will be displayed in the modal view. Otherwise, not. <code>downloadable=false</code>
+              by default</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>showExtUrlButton</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>boolean</code>
+          </div>
+          <div>
+            <p>If true and the image url is defined, the external url button will
+              be displayed in the modal view. Otherwise, not. <code>downloadable=false</code> by default</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h3>Outputs</h3>
+    <table class="table table-hover table-sm">
+      <tbody>
+      <tr>
+        <td><code>close</code></td>
+        <td>
+          <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the modal view closes.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><code>show</code></td>
+        <td>
+          <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the modal image will be visible.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><code>firstImage</code></td>
+        <td>
+          <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the first image in
+            <code>modalImages</code> will be visible.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><code>lastImage</code></td>
+        <td>
+          <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the last image in
+            <code>modalImages</code> will be visible.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hasData</code></td>
+        <td>
+          <p>An <code><a href="#">ImageModalEvent</a></code> right <b>after</b> that the library finished
+            to process input <code>modalImages</code>.</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+</section>
