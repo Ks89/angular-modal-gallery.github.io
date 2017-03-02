@@ -12,6 +12,15 @@
         <%= webpackConfig.htmlElements.headTags %>
         <% } %>
 
+        <style>
+            .progress-loading {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        </style>
+
         <!-- Third-party css/scss imports are in src/app/application/application.scss -->
 
         <base href="/">
@@ -20,7 +29,7 @@
         <br>
         <!-- Include application here -->
         <mmw-application>
-            <i class="center-fix main-spinner fa fa-spin fa-spinner"></i>
+            <img src="assets/ring.svg" class="progress-loading"></div>
         </mmw-application>
 
         <!-- Libraries will be included here automatically by Webpack-->
