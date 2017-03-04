@@ -70,8 +70,8 @@
               <i>Type: </i><code>boolean</code>
             </div>
             <div>
-              <p>If true, you'll be able to download the current modal image always with keyboard shortcut (<i>ctrl+s</i>
-                or <i>cmd+s</i>),
+              <p>If true, you'll be able to download the current modal image always with keyboard shortcut (<kbd>ctrl</kbd>+<kbd>s</kbd>
+                or <kbd>cmd</kbd>+<kbd>s</kbd>),
                 but the download button will be displayed only if <code>showDownloadButton</code> will be true. Otherwise,
                 all download features will be disabled. <code>downloadable=false</code> by default</p>
               <p>Please be careful: on SmartPhones and Tablets you can't use keyboard shortcuts, so if you want to enable
@@ -176,6 +176,8 @@
     </table>
   </section>
 
+  <br>
+
   <a href="#"><u class="text-success"><h1 class="text-success">Image</h1></u></a>
   <p>The main object that represents an Image with both thumbnail, description and so on.
     To initialize <code>ModalGallery</code> you have to build an array/Observable of these objects.</p>
@@ -197,7 +199,7 @@
         <td><code>thumb</code></td>
         <td>
           <div>
-            <i>Type: </i><code>string</code>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
           </div>
           <div>
             <p>Optional source path of the thumbnail image. If you don't provide this path,
@@ -210,7 +212,7 @@
         <td><code>description</code></td>
         <td>
           <div>
-            <i>Type: </i><code>string</code>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
           </div>
           <div>
             <p>Optional description text.
@@ -220,10 +222,10 @@
         </td>
       </tr>
       <tr>
-        <td>extUrl</td>
+        <td><code>extUrl</code></td>
         <td>
           <div>
-            <i>Type: </i><code>string</code>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
           </div>
           <div>
             <p>Optional external url path. You must use a valid url, because <code>angular-modal-gallery</code>
@@ -234,16 +236,7 @@
     </tbody>
   </table>
 
-
-  <a href="#"><u class="text-success"><h1 class="text-success">Action</h1></u></a>
-  <p>Enum that represents the source of an action. It can be one of these enum values:</p>
-  <ul>
-    <li><code>NORMAL</code>: the default value</li>
-    <li><code>CLICK</code>: mouse click action</li>
-    <li><code>KEYBOARD</code>: keyboard action (ctrl+s, cmd+s, esc, arrows and so on)</li>
-    <li><code>SWIPE</code>: swipe action</li>
-    <li><code>LOAD</code>: data/images loaded by the library</li>
-  </ul>
+  <br>
 
   <a href="#"><u class="text-success"><h1 class="text-success">ImageModalEvent</h1></u></a>
   <p>The payload of all events emitted by this library.</p>
@@ -276,11 +269,93 @@
     </tbody>
   </table>
 
+  <br>
 
   <a href="#"><u class="text-success"><h1 class="text-success">Description</h1></u></a>
-  customFullDescription?: string;
-  imageText?: string;
-  numberSeparator?: string;
-  beforeTextDescription?: string;
+  <p>Interface to set a custom description.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+      <tr>
+        <td><code>imageText</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
+          </div>
+          <div>
+            <p>It's the beginning part of the description. By default its value is `Image`,
+              but you can change the language specifying your value, for instance 'Immagine' (italian),
+              'Bild' (german), 'Imagen' (spanish) or also an empty string ''.</p>
+            <p>Example: `<code>imageText</code> 2/12 - bla bla`</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>numberSeparator</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
+          </div>
+          <div>
+            <p>It's the text between the current image number ad the total number of images.</p>
+            <p>Example: `Image 2<code>numberSeparator</code>12 - bla bla`</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>beforeTextDescription</code></td>
+        <td>
+          <div>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
+          </div>
+          <div>
+            <p>It's the text between the total number of images and the final description text</p>
+            <p>Example: `Image 2/12<code>beforeTextDescription</code>bla bla`</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><div><code>customFullDescription</code></div></td>
+        <td>
+          <div>
+            <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
+          </div>
+          <div>
+            <p>It's the full text description. If you set this value, all others will be ignored.</p>
+            <p>Obviously, if you want a dynamic description with the current image number and so on,
+              you have to build it by yourself. Otherwise, you the other parameters of this object
+              to customize the default description.
+              have to build your description </p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <a href="#"><u class="text-success"><h1 class="text-success">Action</h1></u></a>
+  <p>Enum that represents the source of an action. It can be one of these enum values:</p>
+  <br>
+  <ul>
+    <li><code>NORMAL</code>: the default value</li>
+    <li><code>CLICK</code>: mouse click action</li>
+    <li><code>KEYBOARD</code>: keyboard action (<kbd>ctrl</kbd>+<kbd>s</kbd>, <kbd>cmd</kbd>+<kbd>s</kbd>, <kbd>esc</kbd>, <kbd>&rarr;</kbd>, <kbd>&larr;</kbd> and so on)</li>
+    <li><code>SWIPE</code>: swipe action</li>
+    <li><code>LOAD</code>: data/images loaded by the library</li>
+  </ul>
+
+  <br>
+
+  <a href="#"><u class="text-success"><h1 class="text-success">Keyboard</h1></u></a>
+  <p>Enum that represents keyboard's keycodes. It can be one of these enum values:</p>
+  <br>
+  <ul>
+    <li><code>ESC</code>: 27</li>
+    <li><code>LEFT_ARROW</code>: 37</li>
+    <li><code>RIGHT_ARROW</code>: 39</li>
+    <li><code>UP_ARROW</code>: 38</li>
+    <li><code>DOWN_ARROW</code>: 40</li>
+  </ul>
 
 </div>
