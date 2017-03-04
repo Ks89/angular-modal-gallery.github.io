@@ -26,7 +26,6 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFound404Component } from './pages/404/not-found404.component';
 import { GettingStartedComponent } from "./pages/getting-started/getting-started.component";
-import { DemoComponent } from "./pages/demo/demo.component";
 
 export const ROUTES: Routes = [
   {path: '',                                component: HomeComponent},
@@ -39,7 +38,6 @@ export const ROUTES: Routes = [
     data: { preload: true }
   },
 
-  {path: 'demo',                            component: DemoComponent},
   {path: 'lazy',                            loadChildren: './pages/lazy/lazy.module#LazyModule'},
   {path: '**',                              component: NotFound404Component}
 ];

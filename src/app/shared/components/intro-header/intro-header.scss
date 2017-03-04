@@ -22,13 +22,21 @@
  * SOFTWARE.
  */
 
+$my-dark-green: #3c763d;
+$my-green: #7de87d;
+
 .intro-header {
-  background-color: #3c763d;
-  background: linear-gradient(135deg, #3c763d, #7de87d);
+  background-color: $my-dark-green;
+  background: linear-gradient(135deg, $my-dark-green, $my-green);
   margin-top: 32px;
   color: white;
 
   h1 {
     color: white;
   }
+}
+
+.btn:hover {
+  background: white;
+  color: $my-dark-green !important;
 }

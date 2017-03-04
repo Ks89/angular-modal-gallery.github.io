@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['features.scss']
 })
 export class FeaturesComponent {
+
+  title: string = 'Modal Gallery';
+
+  onUpdateTitle(event: string) {
+    this.title = event;
+  }
+
 }

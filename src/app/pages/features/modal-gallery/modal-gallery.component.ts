@@ -9,8 +9,8 @@ import 'rxjs/add/operator/delay';
 
 @Component({
   selector: 'mmw-gallery-array-page',
-  templateUrl: 'gallery-array.html',
-  styleUrls: ['gallery-array.scss']
+  templateUrl: 'modal-gallery.html',
+  styleUrls: ['modal-gallery.scss']
 })
 export class GalleryArrayComponent {
 

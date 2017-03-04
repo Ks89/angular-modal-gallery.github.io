@@ -25,9 +25,11 @@
 import { NavbarComponent } from './navbar/navbar.component';
 import { IntroHeaderComponent } from './intro-header/intro-header.component';
 import { FooterComponent } from "./footer/footer.component";
+import { SidebarComponent } from "./sidebar/sidebar.component";
 
 export const SHARED_COMPONENTS = [
   NavbarComponent,
   IntroHeaderComponent,
-  FooterComponent
+  FooterComponent,
+  SidebarComponent
 ];

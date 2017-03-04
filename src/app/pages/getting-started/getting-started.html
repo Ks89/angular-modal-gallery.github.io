@@ -7,15 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-3 push-md-9">
-      <p><a [routerLink]="['/gettingStarted']">Getting Started</a></p>
-      <p><a [routerLink]="['/features']">Features</a></p>
-      <ul>
-        <li><a [routerLink]="['/features/galleryArray']">Gallery (array)</a></li>
-        <li><a [routerLink]="['/features/galleryObservable']">Gallery (Observable)</a></li>
-        <li><a [routerLink]="['/features/galleryDescription']">Gallery description</a></li>
-        <li><a [routerLink]="['/features/download']">Download</a></li>
-        <li><a [routerLink]="['/features/externalUrl']">External URL</a></li>
-      </ul>
+      <mmw-sidebar></mmw-sidebar>
     </div>
     <div class="col-12 col-md-9 pull-md-3">
 
@@ -30,8 +22,8 @@
       </ul>
 
       <h3>Installation</h3>
-      <p>After installing the above dependencies, install <code>angular-modal-gallery</code> via:
-        <code>npm install --save angular-modal-gallery</code>.</p>
+      <p>After installing the above dependencies, install <code>angular-modal-gallery</code> via:</p>
+      <p><code>npm install --save angular-modal-gallery</code></p>
       <p>Once installed you need to import the main module and both hammerjs and mousetrap.</p>
       <pre>
         import 'hammerjs';

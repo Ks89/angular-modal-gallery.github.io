@@ -25,9 +25,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'mmw-demo-page',
-  styleUrls: ['demo.scss'],
-  templateUrl: 'demo.html'
+  selector: 'mmw-sidebar',
+  templateUrl: 'sidebar.html'
 })
-export class DemoComponent {
+export class SidebarComponent {
 }
