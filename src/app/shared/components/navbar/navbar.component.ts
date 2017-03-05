@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'mmw-navigation',
+  selector: 'mmw-navbar',
   templateUrl: 'navbar.html'
 })
 export class NavbarComponent {
@@ -34,6 +34,6 @@ export class NavbarComponent {
   }
 
   isNavItemActive(location: string) {
-    return location === this.router.url ? 'active' : '';
+    return this.router.url.includes(location) ? 'active' : '';
   }
 }

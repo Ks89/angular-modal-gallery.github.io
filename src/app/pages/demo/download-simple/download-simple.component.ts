@@ -22,19 +22,22 @@
  * SOFTWARE.
  */
 
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
+import {
+  Image,
+  Action,
+  ImageModalEvent,
+  Description
+} from 'angular-modal-gallery';
+
+import { IMAGES_ARRAY } from '../images';
 
 @Component({
-  selector: 'mmw-features-page',
-  templateUrl: 'features.html',
-  styleUrls: ['features.scss']
+  selector: 'mmw-download-simple-page',
+  templateUrl: 'download-simple.html',
+  styleUrls: ['download-simple.scss']
 })
-export class FeaturesComponent {
-
-  title: string = 'Modal Gallery';
-
-  onUpdateTitle(event: string) {
-    this.title = event;
-  }
-
+export class DownloadSimpleComponent {
+  imagesArray: Array<Image> = IMAGES_ARRAY;
 }

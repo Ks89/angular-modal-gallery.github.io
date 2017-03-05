@@ -22,34 +22,22 @@
  * SOFTWARE.
  */
 
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component} from '@angular/core';
 
-import { routes } from './lazy.routes';
+import {
+  Image,
+  Action,
+  ImageModalEvent,
+  Description
+} from 'angular-modal-gallery';
 
-import { SharedModule } from '../../shared/shared.module';
-import { LazyComponent } from './lazy.component';
+import { IMAGES_ARRAY } from '../images';
 
-// ********************** angular-modal-gallery *****************************
-import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
-// **************************************************************************
-
-console.log('`Lazy` bundle loaded asynchronously');
-
-@NgModule({
-  declarations: [
-    LazyComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-
-    ModalGalleryModule.forRoot() // <-------------------------------------------- angular-modal-gallery module import
-  ],
-  providers: []
+@Component({
+  selector: 'mmw-array-simple-page',
+  templateUrl: 'array-simple.html',
+  styleUrls: ['array-simple.scss']
 })
-export class LazyModule {
-  public static routes = routes;
+export class ArraySimpleComponent {
+  imagesArray: Array<Image> = IMAGES_ARRAY;
 }

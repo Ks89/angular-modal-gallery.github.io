@@ -1,0 +1,119 @@
+<div class="container">
+
+  <a href="#"><u class="text-success"><h1 class="text-success">Array Simple example</h1></u></a>
+  <p>Minimal and simple modal gallery example.</p>
+  <br>
+
+  <h2>Live Demo</h2>
+  <br>
+  <modal-gallery [modalImages]="imagesArray"></modal-gallery>
+  <br><br>
+
+  <section>
+    <h2>Code</h2>
+    <br>
+    <pre>
+      &lt;modal-gallery [modalImages]="imagesArray"&gt;&lt;/modal-gallery&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Details</h2>
+    <br>
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr>
+          <th>Input</th>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>[modalImages]</code></td>
+          <td>
+            <div><code>Array&lt;Image&gt;</code></div>
+          </td>
+          <td>Array of <code>Image</code> objects</td>
+        </tr>
+        <tr>
+          <td><code>[imagePointer]</code></td>
+          <td>
+            <div><code>undefined</code></div>
+          </td>
+          <td>It will display the entire gallery</td>
+        </tr>
+        <tr>
+          <td><code>[downloadable]</code></td>
+          <td>
+            <div><code>undefined</code></div>
+            <div>(<code>false</code> by default)</div>
+          </td>
+          <td>Not downloadable at all</td>
+        </tr>
+        <tr>
+          <td><code>[description]</code></td>
+          <td>
+            <div><code>undefined</code></div>
+          </td>
+          <td>It will use the default description</td>
+        </tr>
+        <tr>
+          <td><code>[showDownloadButton]</code></td>
+          <td>
+            <div><code>undefined</code></div>
+            <div>(<code>false</code> by default)</div>
+          </td>
+          <td>Download button is hidden</td>
+        </tr>
+        <tr>
+          <td><code>[showExtUrlButton]</code></td>
+          <td>
+            <div><code>undefined</code></div>
+            <div>(<code>false</code> by default)</div>
+          </td>
+          <td>External url button is hidden</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr>
+          <th>Output</th>
+          <th>Return</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>(close)</code></td>
+          <td><code>ImageModalEvent</code></td>
+          <td>Ignored in this simple example</td>
+        </tr>
+        <tr>
+          <td><code>(show)</code></td>
+          <td><code>ImageModalEvent</code></td>
+          <td>Ignored in this simple example</td>
+        </tr>
+        <tr>
+          <td><code>(firstImage)</code></td>
+          <td><code>ImageModalEvent</code></td>
+          <td>Ignored in this simple example</td>
+        </tr>
+        <tr>
+          <td><code>(lastImage)</code></td>
+          <td><code>ImageModalEvent</code></td>
+          <td>Ignored in this simple example</td>
+        </tr>
+        <tr>
+          <td><code>(hasData)</code></td>
+          <td><code>ImageModalEvent</code></td>
+          <td>Ignored in this simple example</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

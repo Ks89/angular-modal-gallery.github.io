@@ -4,19 +4,35 @@
           aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand m-b-0" [routerLink]="['/']" href="#">angular-modal-gallery</a>
+  <a class="navbar-brand" [routerLink]="['/']" href="#">angular-modal-gallery</a>
+
   <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link {{isNavItemActive('/gettingStarted')}}" [routerLink]="['/gettingStarted']">Getting
-        started <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link {{isNavItemActive('/features')}}" [routerLink]="['/features']">Features</a>
-      <a class="nav-item nav-link {{isNavItemActive('/demo')}}" [routerLink]="['/demo']">Demo</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="isNavItemActive('/gettingStarted')" [routerLink]="['/gettingStarted']">Getting
+          started <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="isNavItemActive('/features')" [routerLink]="['/features']">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="isNavItemActive('/demo')" [routerLink]="['/demo']">Demo</a>
+      </li>
+    </ul>
 
-      <a class="nav-item">
-        <iframe allowtransparency="true" scrolling="no" frameborder="0" style="width: 98px; height: 28px; border: none;" src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89%2Fangular-modal-gallery&text=Star&data-count-api=%2Frepos%2FKs89%2Fangular-modal-gallery%23stargazers_count&data-count-href=%2FKs89%2Fangular-modal-gallery%2Fstargazers&data-count-aria-label=%23%20stargazers%20on%20GitHub&data-style=mega&data-icon=&aria-label=Star%20Ks89%2Fangular-modal-gallery%20on%20GitHub"></iframe>
-        <iframe allowtransparency="true" scrolling="no" frameborder="0" style="width: 98px; height: 28px; border: none;" src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89%2Fangular-modal-gallery%2Ffork&text=Fork&data-count-api=%2Frepos%2FKs89%2Fangular-modal-gallery%23forks_count&data-count-href=%2FKs89%2Fangular-modal-gallery%2Fnetwork&data-count-aria-label=%23%20forks%20on%20GitHub&data-style=mega&data-icon=&aria-label=Fork%20Ks89%2Fangular-modal-gallery%20on%20GitHub"></iframe>
-      </a>
-
-    </div>
+    <span class="form-inline my-2 my-lg-0">
+      <iframe class="mr-sm-2" allowtransparency="true" scrolling="no" frameborder="0"
+              style="width: 160px; height: 28px; border: none;"
+              src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89&text=Follow%20%40Ks89&data-count-api=%2Fusers%2FKs89%23followers&data-count-href=%2FKs89%2Ffollowers&data-count-aria-label=%23%20followers%20on%20GitHub&data-style=mega&data-icon=&aria-label=Follow%20%40Ks89%20on%20GitHub"></iframe>
+      <iframe class="mr-sm-2" allowtransparency="true" scrolling="no" frameborder="0"
+              style="width: 98px; height: 28px; border: none;"
+              src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89%2Fangular-modal-gallery&text=Star&data-count-api=%2Frepos%2FKs89%2Fangular-modal-gallery%23stargazers_count&data-count-href=%2FKs89%2Fangular-modal-gallery%2Fstargazers&data-count-aria-label=%23%20stargazers%20on%20GitHub&data-style=mega&data-icon=&aria-label=Star%20Ks89%2Fangular-modal-gallery%20on%20GitHub"></iframe>
+      <iframe class="my-2 my-sm-0" allowtransparency="true" scrolling="no" frameborder="0"
+              style="width: 102px; height: 28px; border: none;"
+              src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89%2Fangular-modal-gallery%2Ffork&text=Fork&data-count-api=%2Frepos%2FKs89%2Fangular-modal-gallery%23forks_count&data-count-href=%2FKs89%2Fangular-modal-gallery%2Fnetwork&data-count-aria-label=%23%20forks%20on%20GitHub&data-style=mega&data-icon=octicon-repo-forked&aria-label=Fork%20Ks89%2Fangular-modal-gallery%20on%20GitHub"></iframe>
+      <iframe class="mr-sm-2" allowtransparency="true" scrolling="no" frameborder="0"
+              style="width: 108px; height: 28px; border: none;"
+              src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89%2Fangular-modal-gallery%2Fsubscription&text=Watch&data-count-api=%2Frepos%2FKs89%2Fangular-modal-gallery%23subscribers_count&data-count-href=%2FKs89%2Fangular-modal-gallery%2Fwatchers&data-count-aria-label=%23%20watchers%20on%20GitHub&data-style=mega&data-icon=octicon-eye&aria-label=Watch%20Ks89%2Fangular-modal-gallery%20on%20GitHub"></iframe>
+    </span>
   </div>
 </nav>

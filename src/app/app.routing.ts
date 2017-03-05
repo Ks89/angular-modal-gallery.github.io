@@ -38,6 +38,11 @@ export const ROUTES: Routes = [
     data: { preload: true }
   },
 
-  {path: 'lazy',                            loadChildren: './pages/lazy/lazy.module#LazyModule'},
+  {
+    path: 'demo',
+    loadChildren: './pages/demo/demo.module#DemoModule',
+    data: { preload: true }
+  },
+
   {path: '**',                              component: NotFound404Component}
 ];
