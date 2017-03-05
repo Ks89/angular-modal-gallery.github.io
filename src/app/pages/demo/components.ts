@@ -6,6 +6,8 @@ import { DownloadSimpleComponent } from './download-simple/download-simple.compo
 import { ExtUrlSimpleComponent } from './exturl-simple/exturl-simple.component';
 import { OutputEventsComponent } from './output-events/output-events.component';
 import { ObservableAdvancedComponent } from './observable-advanced/observable-advanced.component';
+import { AddImageArrayComponent } from './add-image-array/add-image-array.component';
+import { AddImageObservableComponent } from './add-image-observable/add-image-observable.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -15,5 +17,7 @@ export const FEATURES_COMPONENTS = [
   DownloadAdvancedComponent,
   ExtUrlSimpleComponent,
   OutputEventsComponent,
-  ObservableAdvancedComponent
+  ObservableAdvancedComponent,
+  AddImageArrayComponent,
+  AddImageObservableComponent
 ];

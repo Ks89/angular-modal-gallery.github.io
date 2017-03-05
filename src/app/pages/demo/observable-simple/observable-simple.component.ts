@@ -35,6 +35,8 @@ import {
   Description
 } from 'angular-modal-gallery';
 
+import * as _ from 'lodash';
+
 import { IMAGES_ARRAY } from '../images';
 
 @Component({
@@ -44,5 +46,5 @@ import { IMAGES_ARRAY } from '../images';
 })
 export class ObservableSimpleComponent {
   // observable of an array of images with a delay to simulate a network request
-  imagesObservable: Observable<Array<Image>> = Observable.of(IMAGES_ARRAY).delay(300);
+  imagesObservable: Observable<Array<Image>> = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(300);
 }

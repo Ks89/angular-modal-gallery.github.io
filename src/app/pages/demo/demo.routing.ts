@@ -8,6 +8,8 @@ import { DownloadAdvancedComponent } from './download-advanced/download-advanced
 import { ExtUrlSimpleComponent } from './exturl-simple/exturl-simple.component';
 import { OutputEventsComponent } from './output-events/output-events.component';
 import { ObservableAdvancedComponent } from './observable-advanced/observable-advanced.component';
+import { AddImageArrayComponent } from './add-image-array/add-image-array.component';
+import { AddImageObservableComponent } from './add-image-observable/add-image-observable.component';
 
 export const routes: Routes = [
   { path: '',
@@ -20,7 +22,9 @@ export const routes: Routes = [
       { path: 'download-advanced',    component: DownloadAdvancedComponent},
       { path: 'exturl-simple',        component: ExtUrlSimpleComponent },
       { path: 'output-events',        component: OutputEventsComponent },
-      { path: 'observable-advanced',  component: ObservableAdvancedComponent }
+      { path: 'observable-advanced',  component: ObservableAdvancedComponent },
+      { path: 'add-image-array',      component: AddImageArrayComponent },
+      { path: 'add-image-observable', component: AddImageObservableComponent }
     ]
   }
 ];

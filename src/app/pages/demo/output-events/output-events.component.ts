@@ -31,6 +31,8 @@ import {
   Description
 } from 'angular-modal-gallery';
 
+import * as _ from 'lodash';
+
 import {IMAGES_ARRAY} from '../images';
 
 @Component({
@@ -39,7 +41,7 @@ import {IMAGES_ARRAY} from '../images';
   styleUrls: ['output-events.scss']
 })
 export class OutputEventsComponent {
-  imagesArray: Array<Image> = IMAGES_ARRAY;
+  imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
   imageLoaded: ImageModalEvent;
   visibleIndex: ImageModalEvent;

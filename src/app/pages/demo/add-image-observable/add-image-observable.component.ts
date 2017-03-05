@@ -41,15 +41,19 @@ import * as _ from 'lodash';
 import { IMAGES_ARRAY } from '../images';
 
 @Component({
-  selector: 'mmw-observable-advanced-page',
-  templateUrl: 'observable-advanced.html',
-  styleUrls: ['observable-advanced.scss']
+  selector: 'mmw-add-image-observable-page',
+  templateUrl: 'add-image-observable.html',
+  styleUrls: ['add-image-observable.scss']
 })
-export class ObservableAdvancedComponent implements OnInit, OnDestroy {
-  // observable of an array of images with a delay to simulate a network request
+export class AddImageObservableComponent implements OnInit, OnDestroy {
+
   imagesArraySubscribed: Array<Image>;
 
   private subscription: Subscription;
+
+  addRandomImage() {
+    this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.imagesArraySubscribed.length)]);
+  }
 
   ngOnInit() {
     this.subscription = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(500)

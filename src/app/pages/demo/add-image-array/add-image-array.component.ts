@@ -22,12 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, OnInit, OnDestroy } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from "rxjs/Subscription";
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
+import { Component} from '@angular/core';
 
 import {
   Image,
@@ -41,26 +36,15 @@ import * as _ from 'lodash';
 import { IMAGES_ARRAY } from '../images';
 
 @Component({
-  selector: 'mmw-observable-advanced-page',
-  templateUrl: 'observable-advanced.html',
-  styleUrls: ['observable-advanced.scss']
+  selector: 'mmw-add-image-array-page',
+  templateUrl: 'add-image-array.html',
+  styleUrls: ['add-image-array.scss']
 })
-export class ObservableAdvancedComponent implements OnInit, OnDestroy {
-  // observable of an array of images with a delay to simulate a network request
-  imagesArraySubscribed: Array<Image>;
+export class AddImageArrayComponent {
 
-  private subscription: Subscription;
+  imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
-  ngOnInit() {
-    this.subscription = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(500)
-      .subscribe((val: Array<Image>) => {
-        this.imagesArraySubscribed = val;
-    });
-  }
-
-  ngOnDestroy() {
-    if(this.subscription) {
-      this.subscription.unsubscribe();
-    }
+  addRandomImage() {
+    this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.imagesArray.length)]);
   }
 }

@@ -22,45 +22,19 @@
  * SOFTWARE.
  */
 
-import { Component, OnInit, OnDestroy } from '@angular/core';
+.title {
+  background-color: #3c763d;
+  background: linear-gradient(135deg, #3c763d, #7de87d);
+  margin-top: 32px;
+  color: white;
 
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from "rxjs/Subscription";
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
-
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
-
-import * as _ from 'lodash';
-
-import { IMAGES_ARRAY } from '../images';
-
-@Component({
-  selector: 'mmw-observable-advanced-page',
-  templateUrl: 'observable-advanced.html',
-  styleUrls: ['observable-advanced.scss']
-})
-export class ObservableAdvancedComponent implements OnInit, OnDestroy {
-  // observable of an array of images with a delay to simulate a network request
-  imagesArraySubscribed: Array<Image>;
-
-  private subscription: Subscription;
-
-  ngOnInit() {
-    this.subscription = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(500)
-      .subscribe((val: Array<Image>) => {
-        this.imagesArraySubscribed = val;
-    });
+  h1 {
+    color: white;
   }
+}
 
-  ngOnDestroy() {
-    if(this.subscription) {
-      this.subscription.unsubscribe();
-    }
-  }
+.text-shadow {
+  text-shadow: -4px 0 #fff, -3px 0 #fff, -2px 0 #fff, -1px 0 #fff, 0 0 #fff, 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, 4px 0 #fff;
+  //box-shadow: 0 1px #fff, 0 3px #0275d8;
+  //display: table;
 }

@@ -31,6 +31,8 @@ import {
   Description
 } from 'angular-modal-gallery';
 
+import * as _ from 'lodash';
+
 import { IMAGES_ARRAY } from '../images';
 
 @Component({
@@ -39,5 +41,5 @@ import { IMAGES_ARRAY } from '../images';
   styleUrls: ['exturl-simple.scss']
 })
 export class ExtUrlSimpleComponent {
-  imagesArray: Array<Image> = IMAGES_ARRAY;
+  imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 }
