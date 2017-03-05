@@ -5,6 +5,7 @@ import { DemoComponent } from "./demo.component";
 import { ObservableSimpleComponent } from "./observable-simple/observable-simple.component";
 import { DownloadSimpleComponent } from "./download-simple/download-simple.component";
 import { DownloadAdvancedComponent } from "./download-advanced/download-advanced.component";
+import { ExtUrlSimpleComponent } from "./exturl-simple/exturl-simple.component";
 
 export const routes: Routes = [
   { path: '',
@@ -15,6 +16,7 @@ export const routes: Routes = [
       { path: 'observable-simple',    component: ObservableSimpleComponent},
       { path: 'download-simple',      component: DownloadSimpleComponent},
       { path: 'download-advanced',    component: DownloadAdvancedComponent},
+      { path: 'exturl-simple',        component: ExtUrlSimpleComponent }
     ]
   }
 ];
