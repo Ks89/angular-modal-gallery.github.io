@@ -22,22 +22,19 @@
  * SOFTWARE.
  */
 
-import { Component } from '@angular/core';
+.title {
+  background-color: #3c763d;
+  background: linear-gradient(135deg, #3c763d, #7de87d);
+  margin-top: 32px;
+  color: white;
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
+  h1 {
+    color: white;
+  }
+}
 
-import { IMAGES_ARRAY } from '../images';
-
-@Component({
-  selector: 'mmw-download-advanced-page',
-  templateUrl: 'download-advanced.html',
-  styleUrls: ['download-advanced.scss']
-})
-export class DownloadAdvancedComponent {
-  imagesArray: Array<Image> = IMAGES_ARRAY;
+.text-shadow {
+  text-shadow: -4px 0 #fff, -3px 0 #fff, -2px 0 #fff, -1px 0 #fff, 0 0 #fff, 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, 4px 0 #fff;
+  //box-shadow: 0 1px #fff, 0 3px #0275d8;
+  //display: table;
 }

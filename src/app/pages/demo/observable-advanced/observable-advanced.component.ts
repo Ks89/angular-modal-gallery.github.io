@@ -22,7 +22,12 @@
  * SOFTWARE.
  */
 
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from "rxjs/Subscription";
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
 
 import {
   Image,
@@ -34,10 +39,26 @@ import {
 import { IMAGES_ARRAY } from '../images';
 
 @Component({
-  selector: 'mmw-download-advanced-page',
-  templateUrl: 'download-advanced.html',
-  styleUrls: ['download-advanced.scss']
+  selector: 'mmw-observable-advanced-page',
+  templateUrl: 'observable-advanced.html',
+  styleUrls: ['observable-advanced.scss']
 })
-export class DownloadAdvancedComponent {
-  imagesArray: Array<Image> = IMAGES_ARRAY;
+export class ObservableAdvancedComponent implements OnInit, OnDestroy {
+  // observable of an array of images with a delay to simulate a network request
+  imagesArraySubscribed: Array<Image>;
+
+  private subscription: Subscription;
+
+  ngOnInit() {
+    this.subscription = Observable.of(IMAGES_ARRAY).delay(500)
+      .subscribe((val: Array<Image>) => {
+        this.imagesArraySubscribed = val;
+    });
+  }
+
+  ngOnDestroy() {
+    if(this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }

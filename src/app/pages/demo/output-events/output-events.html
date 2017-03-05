@@ -1,19 +1,73 @@
 <div class="container">
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Observable Simple example</h1></u></a>
-  <p>Minimal and simple modal gallery example.</p>
+  <a href="#"><u class="text-success"><h1 class="text-success">Output Events example</h1></u></a>
+  <p>Minimal and simple modal gallery example with <b class="text-success">output events logged in console.</b></p>
   <br>
 
-  <h2>Live Demo <small>(Delay of 300ms)</small></h2>
+  <h2>Live Demo</h2>
   <br>
-  <modal-gallery [modalImages]="imagesObservable"></modal-gallery>
+  <modal-gallery [modalImages]="imagesArray"
+                 (hasData)="onImageLoaded($event)"
+                 (close)="onCloseImageModal($event)"
+                 (show)="onVisibleIndex($event)"
+                 (firstImage)="onIsFirstImage($event)"
+                 (lastImage)="onIsLastImage($event)">
+  </modal-gallery>
+  <br><br>
+  <h5>Live demo results</h5>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Output</th>
+        <th>$event value (Event payload)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>(hasData)</code></td>
+        <td>
+          <div>{{imageLoaded | json}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>(close)</code></td>
+        <td>
+          <div>{{closeImageModal | json}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>(show)</code></td>
+        <td>
+          <div>{{visibleIndex | json}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>(firstImage)</code></td>
+        <td>
+          <div>{{isFirstImage | json}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>(lastImage)</code></td>
+        <td>
+          <div>{{isLastImage | json}}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <br><br>
 
   <section>
     <h2>Code</h2>
     <br>
     <pre>
-      &lt;modal-gallery [modalImages]="imagesObservable"&gt;&lt;/modal-gallery&gt;
+      &lt;modal-gallery [modalImages]="imagesArray"
+                     (hasData)="onImageLoaded($event)"
+                     (close)="onCloseImageModal($event)"
+                     (show)="onVisibleIndex($event)"
+                     (firstImage)="onIsFirstImage($event)"
+                     (lastImage)="onIsLastImage($event)"&gt;
+      &lt;/modal-gallery&gt;
     </pre>
   </section>
 
@@ -32,9 +86,9 @@
         <tr>
           <td><code>[modalImages]</code></td>
           <td>
-            <div><code>Observable&lt;Array&lt;Image&gt;&gt;</code></div>
+            <div><code>Array&lt;Image&gt;</code></div>
           </td>
-          <td><b class="text-success">Observable of <code>Array&lt;Image&gt;</code> objects</b></td>
+          <td>Array of <code>Image</code> objects</td>
         </tr>
         <tr>
           <td><code>[imagePointer]</code></td>
@@ -91,27 +145,27 @@
         <tr>
           <td><code>(close)</code></td>
           <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><b class="text-success">Open the console of your browser to see the result</b></td>
         </tr>
         <tr>
           <td><code>(show)</code></td>
           <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><b class="text-success">Open the console of your browser to see the result</b></td>
         </tr>
         <tr>
           <td><code>(firstImage)</code></td>
           <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><b class="text-success">Open the console of your browser to see the result</b></td>
         </tr>
         <tr>
           <td><code>(lastImage)</code></td>
           <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><b class="text-success">Open the console of your browser to see the result</b></td>
         </tr>
         <tr>
           <td><code>(hasData)</code></td>
           <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><b class="text-success">Open the console of your browser to see the result</b></td>
         </tr>
       </tbody>
     </table>
