@@ -8,8 +8,10 @@ import { OutputEventsComponent } from './output-events/output-events.component';
 import { ObservableAdvancedComponent } from './observable-advanced/observable-advanced.component';
 import { AddImageArrayComponent } from './add-image-array/add-image-array.component';
 import { AddImageObservableComponent } from './add-image-observable/add-image-observable.component';
-import { DescriptionFullCustomComponent } from "./description-full-custom/description-full-custom.component";
-import { DescriptionCustomComponent } from "./description-custom/description-custom.component";
+import { DescriptionFullCustomComponent } from './description-full-custom/description-full-custom.component';
+import { DescriptionCustomComponent } from './description-custom/description-custom.component';
+import { ArrayImagePointerComponent } from './array-image-pointer/array-image-pointer.component';
+import { ObservableImagePointerComponent } from './observable-image-pointer/observable-image-pointer.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -23,5 +25,7 @@ export const FEATURES_COMPONENTS = [
   AddImageArrayComponent,
   AddImageObservableComponent,
   DescriptionCustomComponent,
-  DescriptionFullCustomComponent
+  DescriptionFullCustomComponent,
+  ArrayImagePointerComponent,
+  ObservableImagePointerComponent
 ];

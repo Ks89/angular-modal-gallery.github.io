@@ -40,7 +40,9 @@ module.exports = {
     // { rel: 'manifest', href: '/assets/manifest.json' },
 
     /** font-awesome css **/
-    { rel: 'stylesheet', href: '/assets/font-awesome/css/font-awesome.min.css' }
+    { rel: 'stylesheet', href: '/assets/font-awesome/css/font-awesome.min.css' },
+
+    { rel: 'stylesheet', href: '/assets/codemirror/lib/codemirror.css' }
   ]
   // ,meta: [
   //   { name: 'msapplication-TileColor', content: '#00bcd4' },

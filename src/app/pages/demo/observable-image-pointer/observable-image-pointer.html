@@ -1,25 +1,61 @@
 <div class="container">
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Array Simple example</h1></u></a>
-  <p>Minimal and simple modal gallery <b class="text-success">with a full custom text description.</b></p>
-  <p><b class="text-success">The entire description will be replaced with the provided text.</b></p>
+  <a href="#"><u class="text-success"><h1 class="text-success">Observable with image pointer</h1></u></a>
+  <p>Minimal modal gallery with <b class="text-success">image pointer and Observable</b>.</p>
   <br>
 
-  <h2>Live Demo</h2>
+  <h2>Live Demo <small>(Delay of 300ms)</small></h2>
   <br>
-  <modal-gallery [modalImages]="imagesArray"
-                 [description]="customFullDescription"></modal-gallery>
-  <br><br>
+  <div *ngFor="let img of images | async; let i = index">
+    <div class="float-left" *ngIf="i <= 2">
+      <a class="more" *ngIf="i==2" (click)="openImageModalObservable(img)"> +{{(images | async)?.length - 3}}
+        more </a>
+      <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}" (click)="openImageModalObservable(img)" alt='{{img.description}}'/>
+      <img *ngIf="!img.thumb" class="list-img" src="{{img.img}}" (click)="openImageModalObservable(img)" alt='{{img.description}}'/>
+    </div>
+  </div>
+  <div *ngIf="openModalWindowObservable">
+    <modal-gallery [modalImages]="images"
+                   [imagePointer]="imagePointerObservable"
+                   (close)="onCloseImageModal($event)"></modal-gallery>
+  </div>
+
+  <br><br><br><br>
+  <h5>Live demo results</h5>
+  <table class="table table-hover table-sm">
+    <thead>
+    <tr>
+      <th>ImagePointer</th>
+      <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code>imagePointer</code></td>
+      <td>
+        <div>{{imagePointer}}</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
 
   <section>
     <h2>Code</h2>
     <br>
-    <pre>
-      &lt;modal-gallery [modalImages]="imagesArray"
-                     [description]="customFullDescription"&gt;&lt;/modal-gallery&gt;
-    </pre>
+
+    <h5>Template</h5>
+    <codemirror [(ngModel)]="codeHtml" [config]="config">
+    </codemirror>
+    <br>
+    <h5>Typescript</h5>
+    <codemirror [(ngModel)]="codeTypescript" [config]="config">
+    </codemirror>
+
   </section>
 
+  <br><br>
   <section>
     <h2>Details</h2>
     <br>
@@ -35,9 +71,9 @@
         <tr>
           <td><code>[modalImages]</code>="var"</td>
           <td>
-            <div><code>Array&lt;Image&gt;</code></div>
+            <div><code>Observable&lt;Array&lt;Image&gt;&gt;</code></div>
           </td>
-          <td><b class="text-success">Array of <code>Image</code> objects</b></td>
+          <td><b class="text-success">Observable of an Array of <code>Image</code> objects</b></td>
         </tr>
         <tr>
           <td><code>[imagePointer]</code>="var"</td>
@@ -57,8 +93,7 @@
         <tr>
           <td><code>[description]</code>="var"</td>
           <td>
-            <div><b class="text-success">customFullDescription:</b></div>
-            <div><b class="text-success">'Custom description of the current visible image'</b></div>
+            <div><code>undefined</code></div>
           </td>
           <td>It will use the default description</td>
         </tr>

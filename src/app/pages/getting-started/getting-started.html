@@ -28,30 +28,30 @@
       <pre>
         import 'hammerjs';
         import 'mousetrap';
-        import {{'{'}} ModalGalleryModule {{'}'}} from 'angular-modal-gallery';
+        import &#123; ModalGalleryModule &#125; from 'angular-modal-gallery';
       </pre>
       <p>The only remaining part is to list the imported module in your root module and any additional application modules that make use use of the components in this library. The exact method will be slightly different for the root (top-level) module for which you should end up with the code similar to (notice <code>ModalGalleryModule.forRoot()</code>):</p>
       <pre>
         import 'hammerjs';
         import 'mousetrap';
-        import {{'{'}}ModalGalleryModule{{'}'}} from 'angular-modal-gallery';
-        @NgModule({{'{'}}
+        import &#123;ModalGalleryModule&#125; from 'angular-modal-gallery';
+        @NgModule(&#123;
           imports: [ModalGalleryModule.forRoot(), ...],
           declarations: [ AppComponent, ... ],
           providers: [ ... ],
           bootstrap: [ AppComponent ]
-        {{'}'}})
-        export class AppModule {{'{'}}{{'}'}}
+        &#125;)
+        export class AppModule &#123;&#125;
       </pre>
       <p>Other modules in your application can simply import ModalGalleryModule:</p>
       <pre>
-        import {{'{'}}ModalGalleryModule} from 'angular-modal-gallery';
+        import &#123;ModalGalleryModule} from 'angular-modal-gallery';
 
-        @NgModule({{'{'}}
+        @NgModule(&#123;
           imports: [ModalGalleryModule, ...],
           declarations: [ AnotherComponent, ... ]
-        {{'}'}})
-        export class OtherModule {{'{'}}{{'}'}}
+        &#125;)
+        export class OtherModule &#123;&#125;
       </pre>
 
       <h4>Webpack 2</h4>
@@ -65,17 +65,17 @@
       <p>If you are using SystemJS, you should also adjust your configuration to point to the UMD bundle.</p>
       <p>In your systemjs config file, add both map and packages to tell the System loader where to look for libraries:</p>
       <pre>
-        map: {{'{'}}
+        map: &#123;
           'hammerjs'                  : 'node_modules/hammerjs',
           'mousetrap'                 : 'node_modules/mousetrap'
           'angular-modal-gallery'     : 'node_modules/angular-modal-gallery/dist/bundles',
-        {{'}'}}
+        &#125;
 
-        packages = {{'{'}}
-          'hammerjs'                  : {{'{'}} main: 'hammer.js' {{'}'}},
-          'mousetrap'                 : {{'{'}} main: 'mousetrap.js' {{'}'}},
-          'angular-modal-gallery'     : {{'{'}} main: 'angular-modal-gallery.umd.js' {{'}'}}
-        {{'}'}}
+        packages = &#123;
+          'hammerjs'                  : &#123; main: 'hammer.js' &#125;,
+          'mousetrap'                 : &#123; main: 'mousetrap.js' &#125;,
+          'angular-modal-gallery'     : &#123; main: 'angular-modal-gallery.umd.js' &#125;
+        &#125;
       </pre>
 
       <h3>Getting Help</h3>

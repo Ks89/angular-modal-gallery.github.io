@@ -12,6 +12,8 @@ import { AddImageArrayComponent } from './add-image-array/add-image-array.compon
 import { AddImageObservableComponent } from './add-image-observable/add-image-observable.component';
 import { DescriptionCustomComponent } from './description-custom/description-custom.component';
 import { DescriptionFullCustomComponent } from './description-full-custom/description-full-custom.component';
+import { ArrayImagePointerComponent } from './array-image-pointer/array-image-pointer.component';
+import { ObservableImagePointerComponent } from './observable-image-pointer/observable-image-pointer.component';
 
 export const routes: Routes = [
   { path: '',
@@ -28,7 +30,9 @@ export const routes: Routes = [
       { path: 'add-image-array',          component: AddImageArrayComponent },
       { path: 'add-image-observable',     component: AddImageObservableComponent },
       { path: 'description-custom',       component: DescriptionCustomComponent },
-      { path: 'description-full-custom',  component: DescriptionFullCustomComponent }
+      { path: 'description-full-custom',  component: DescriptionFullCustomComponent },
+      { path: 'array-pointer',            component: ArrayImagePointerComponent },
+      { path: 'observable-pointer',       component: ObservableImagePointerComponent }
     ]
   }
 ];

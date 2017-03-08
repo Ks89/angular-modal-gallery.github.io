@@ -153,6 +153,8 @@ module.exports = webpackMerge(commonConfig, {
           'hammerjs',
           'lodash',
           'mousetrap',
+          'codemirror',
+          'ng2-codemirror',
           'reflect-metadata',
           'tether'
         ]

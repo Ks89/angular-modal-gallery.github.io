@@ -191,6 +191,10 @@ module.exports = {
       {
         from: 'node_modules/font-awesome/fonts',
         to: 'assets/font-awesome/fonts'
+      },
+      {
+        from: 'node_modules/codemirror/lib/codemirror.css',
+        to: 'assets/codemirror/lib/codemirror.css',
       }
     ]),
     new ContextReplacementPlugin(

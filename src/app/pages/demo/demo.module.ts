@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms"; //to support ngModel
 
 import { routing } from './demo.routing';
 
@@ -11,14 +12,18 @@ import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`np
 import { ModalGalleryModule } from 'angular-modal-gallery';
 // **************************************************************************
 
-import { SharedModule } from "../../shared/shared.module";
+import 'codemirror';
+import { CodemirrorModule } from 'ng2-codemirror';
 
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     routing,
     SharedModule,
+    FormsModule,
+    CodemirrorModule,
     ModalGalleryModule // no for root here
   ],
   declarations: [

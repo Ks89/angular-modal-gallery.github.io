@@ -1,24 +1,59 @@
 <div class="container">
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Array Simple example</h1></u></a>
-  <p>Minimal and simple modal gallery <b class="text-success">with a full custom text description.</b></p>
-  <p><b class="text-success">The entire description will be replaced with the provided text.</b></p>
+  <a href="#"><u class="text-success"><h1 class="text-success">Array with image pointer</h1></u></a>
+  <p>Minimal modal gallery with <b class="text-success">image pointer</b>.</p>
   <br>
 
   <h2>Live Demo</h2>
   <br>
-  <modal-gallery [modalImages]="imagesArray"
-                 [description]="customFullDescription"></modal-gallery>
-  <br><br>
+
+  <div *ngFor="let img of imagesArray; let i = index">
+    <div class="float-left" *ngIf="i <= 2">
+      <a class="more" *ngIf="i==2" (click)="openImageModal(img)"> +<span *ngIf="imagesArray">{{imagesArray.length - 3}}</span> more </a>
+      <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}" (click)="openImageModal(img)" alt='{{img.description}}'/>
+      <img *ngIf="!img.thumb" class="list-img" src="{{img.img}}" (click)="openImageModal(img)" alt='{{img.description}}'/>
+    </div>
+  </div>
+  <div *ngIf="openModalWindow">
+    <modal-gallery [modalImages]="imagesArray"
+                   [imagePointer]="imagePointer"
+                   (close)="onCloseImageModal($event)"></modal-gallery>
+  </div>
+
+  <br><br><br><br>
+  <h5>Live demo results</h5>
+  <table class="table table-hover table-sm">
+    <thead>
+    <tr>
+      <th>ImagePointer</th>
+      <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code>[imagePointer]</code></td>
+      <td>
+        <div>{{imagePointer}}</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
 
   <section>
     <h2>Code</h2>
     <br>
-    <pre>
-      &lt;modal-gallery [modalImages]="imagesArray"
-                     [description]="customFullDescription"&gt;&lt;/modal-gallery&gt;
-    </pre>
+    <h5>Template</h5>
+    <codemirror [(ngModel)]="codeHtml" [config]="config">
+    </codemirror>
+    <br>
+    <h5>Typescript</h5>
+    <codemirror [(ngModel)]="codeTypescript" [config]="config">
+    </codemirror>
   </section>
+
+  <br><br>
 
   <section>
     <h2>Details</h2>
@@ -57,8 +92,7 @@
         <tr>
           <td><code>[description]</code>="var"</td>
           <td>
-            <div><b class="text-success">customFullDescription:</b></div>
-            <div><b class="text-success">'Custom description of the current visible image'</b></div>
+            <div><code>undefined</code></div>
           </td>
           <td>It will use the default description</td>
         </tr>

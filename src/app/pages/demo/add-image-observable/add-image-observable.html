@@ -25,28 +25,28 @@
     <table class="table table-hover table-sm">
       <thead>
         <tr>
-          <th>Input</th>
-          <th>Value</th>
-          <th>Description</th>
+          <th>Input (.html)</th>
+          <th>Value (.ts)</th>
+          <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>[modalImages]</code></td>
+          <td><code>[modalImages]</code>="var"</td>
           <td>
             <div><code>Array&lt;Image&gt;</code></div>
           </td>
           <td><b class="text-success">Array of <code>Image</code> initialized with a manual subscription</b></td>
         </tr>
         <tr>
-          <td><code>[imagePointer]</code></td>
+          <td><code>[imagePointer]</code>="var"</td>
           <td>
             <div><code>undefined</code></div>
           </td>
           <td>It will display the entire gallery</td>
         </tr>
         <tr>
-          <td><code>[downloadable]</code></td>
+          <td><code>[downloadable]</code>="var"</td>
           <td>
             <div><code>undefined</code></div>
             <div>(<code>false</code> by default)</div>
@@ -54,27 +54,27 @@
           <td>Not downloadable at all</td>
         </tr>
         <tr>
-          <td><code>[description]</code></td>
+          <td><code>[description]</code>="var"</td>
           <td>
             <div><code>undefined</code></div>
           </td>
           <td>It will use the default description</td>
         </tr>
         <tr>
-          <td><code>[showDownloadButton]</code></td>
+          <td><code>[showDownloadButton]</code>="var"</td>
           <td>
             <div><code>undefined</code></div>
             <div>(<code>false</code> by default)</div>
           </td>
-          <td>Download button is hidden</td>
+          <td>Download button is <span class="text-danger">hidden</span></td>
         </tr>
         <tr>
-          <td><code>[showExtUrlButton]</code></td>
+          <td><code>[showExtUrlButton]</code>="var"</td>
           <td>
             <div><code>undefined</code></div>
             <div>(<code>false</code> by default)</div>
           </td>
-          <td>External url button is hidden</td>
+          <td>External url button is <span class="text-danger">hidden</span></td>
         </tr>
       </tbody>
     </table>
@@ -84,36 +84,30 @@
     <table class="table table-hover table-sm">
       <thead>
         <tr>
-          <th>Output</th>
-          <th>Return</th>
-          <th>Description</th>
+          <th>Output (.html)</th>
+          <th>Return (.ts)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>(close)</code></td>
-          <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><code>(close)</code>="funct($event)"</td>
+          <td>funct(e: <code>ImageModalEvent</code>)</td>
         </tr>
         <tr>
-          <td><code>(show)</code></td>
-          <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><code>(show)</code>="funct($event)"</td>
+          <td>funct(e: <code>ImageModalEvent</code>)</td>
         </tr>
         <tr>
-          <td><code>(firstImage)</code></td>
-          <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><code>(firstImage)</code>="funct($event)"</td>
+          <td>funct(e: <code>ImageModalEvent</code>)</td>
         </tr>
         <tr>
-          <td><code>(lastImage)</code></td>
-          <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><code>(lastImage)</code>="funct($event)"</td>
+          <td>funct(e: <code>ImageModalEvent</code>)</td>
         </tr>
         <tr>
-          <td><code>(hasData)</code></td>
-          <td><code>ImageModalEvent</code></td>
-          <td>Ignored in this simple example</td>
+          <td><code>(hasData)</code>="funct($event)"</td>
+          <td>funct(e: <code>ImageModalEvent</code>)</td>
         </tr>
       </tbody>
     </table>
