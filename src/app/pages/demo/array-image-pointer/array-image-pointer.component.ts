@@ -33,6 +33,7 @@ import {
 
 import * as _ from 'lodash';
 import { IMAGES_ARRAY } from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-array-image-pointer-page',
@@ -49,7 +50,9 @@ export class ArrayImagePointerComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor() {
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Array image pointer');
+
     this.codeHtml =
   `<div *ngFor="let img of imagesArray; let i = index">
     <div class="float-left" *ngIf="i <= 2">

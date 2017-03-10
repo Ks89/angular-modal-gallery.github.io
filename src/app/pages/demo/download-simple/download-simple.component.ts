@@ -34,6 +34,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-download-simple-page',
@@ -42,4 +43,8 @@ import { IMAGES_ARRAY } from '../images';
 })
 export class DownloadSimpleComponent {
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Download simple');
+  }
 }

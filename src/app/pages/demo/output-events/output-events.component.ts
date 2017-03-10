@@ -34,6 +34,7 @@ import {
 import * as _ from 'lodash';
 
 import {IMAGES_ARRAY} from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-output-events-page',
@@ -48,6 +49,10 @@ export class OutputEventsComponent {
   isFirstImage: ImageModalEvent;
   isLastImage: ImageModalEvent;
   closeImageModal: ImageModalEvent;
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Output events');
+  }
 
   onImageLoaded(event: ImageModalEvent) {
     // angular-modal-gallery will emit this event if it will load successfully input images

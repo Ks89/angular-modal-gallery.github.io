@@ -39,6 +39,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-observable-advanced-page',
@@ -50,6 +51,10 @@ export class ObservableAdvancedComponent implements OnInit, OnDestroy {
   imagesArraySubscribed: Array<Image>;
 
   private subscription: Subscription;
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Observable advanced');
+  }
 
   ngOnInit() {
     this.subscription = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(500)

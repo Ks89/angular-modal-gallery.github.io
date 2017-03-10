@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
 })
 export class FeaturesComponent {
 
-  title: string = 'Modal Gallery';
+  title: string = 'Features - Modal Gallery';
 
   onUpdateTitle(event: string) {
     this.title = event;

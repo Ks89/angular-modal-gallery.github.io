@@ -39,6 +39,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import {TitleService} from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-observable-image-pointer-page',
@@ -94,6 +95,10 @@ export class ObservableImagePointerComponent implements OnDestroy {
         this.subscription.unsubscribe();
       }
     }`;
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Observable image pointer');
+  }
 
   openImageModalObservable(image: Image) {
     this.subscription = this.images.subscribe((val: Array<Image>) => {

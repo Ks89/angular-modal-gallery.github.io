@@ -39,6 +39,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import {TitleService} from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-add-image-observable-page',
@@ -50,6 +51,10 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
   imagesArraySubscribed: Array<Image>;
 
   private subscription: Subscription;
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Add image Observable');
+  }
 
   addRandomImage() {
     this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.imagesArraySubscribed.length)]);

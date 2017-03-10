@@ -34,6 +34,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-add-image-array-page',
@@ -43,6 +44,10 @@ import { IMAGES_ARRAY } from '../images';
 export class AddImageArrayComponent {
 
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Add image array');
+  }
 
   addRandomImage() {
     this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.imagesArray.length)]);

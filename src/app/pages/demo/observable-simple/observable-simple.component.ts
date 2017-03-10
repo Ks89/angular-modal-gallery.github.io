@@ -38,6 +38,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-observable-simple-page',
@@ -47,4 +48,8 @@ import { IMAGES_ARRAY } from '../images';
 export class ObservableSimpleComponent {
   // observable of an array of images with a delay to simulate a network request
   imagesObservable: Observable<Array<Image>> = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(300);
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Observable simple');
+  }
 }

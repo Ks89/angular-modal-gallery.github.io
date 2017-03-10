@@ -34,6 +34,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
+import { TitleService } from "../../../shared/services/title.service";
 
 @Component({
   selector: 'mmw-description-custom-page',
@@ -48,4 +49,8 @@ export class DescriptionCustomComponent {
     numberSeparator: ' of ',
     beforeTextDescription: ' => '
   };
+
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Demo - Description custom');
+  }
 }
