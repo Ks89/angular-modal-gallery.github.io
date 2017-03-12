@@ -50,10 +50,36 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
 
   imagesArraySubscribed: Array<Image>;
 
+  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  codeTypescript: string;
+
   private subscription: Subscription;
 
   constructor(private titleService: TitleService) {
     this.titleService.titleEvent.emit('Demo - Add image Observable');
+
+    this.codeTypescript =
+      `   // IMAGES_ARRAY is an Array<Image> that you have to initialize with your images
+  imagesArraySubscribed: Array<Image>;
+
+  private subscription: Subscription;
+
+  addRandomImage() {
+    this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.imagesArraySubscribed.length)]);
+  }
+
+  ngOnInit() {
+    this.subscription = Observable.of(IMAGES_ARRAY).delay(500)
+      .subscribe((val: Array<Image>) => {
+        this.imagesArraySubscribed = val;
+    });
+  }
+
+  ngOnDestroy() {
+    if(this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }`;
   }
 
   addRandomImage() {

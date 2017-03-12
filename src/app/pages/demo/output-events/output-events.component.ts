@@ -56,32 +56,32 @@ export class OutputEventsComponent {
 
   onImageLoaded(event: ImageModalEvent) {
     // angular-modal-gallery will emit this event if it will load successfully input images
-    console.log('onImageLoaded action: ' + Action[event.action]);
-    console.log('onImageLoaded result:' + event.result);
+    console.log('(hasData)=onImageLoaded action: ' + Action[event.action]);
+    console.log('(hasData)=onImageLoaded result:' + event.result);
     this.imageLoaded = event;
   }
 
   onVisibleIndex(event: ImageModalEvent) {
-    console.log('action: ' + Action[event.action]);
-    console.log('result:' + event.result);
+    console.log('(show)=action: ' + Action[event.action]);
+    console.log('(show)=result:' + event.result);
     this.visibleIndex = event;
   }
 
   onIsFirstImage(event: ImageModalEvent) {
-    console.log('onfirst action: ' + Action[event.action]);
-    console.log('onfirst result:' + event.result);
+    console.log('(firstImage)=onfirst action: ' + Action[event.action]);
+    console.log('(firstImage)=onfirst result:' + event.result);
     this.isFirstImage = event;
   }
 
   onIsLastImage(event: ImageModalEvent) {
-    console.log('onlast action: ' + Action[event.action]);
-    console.log('onlast result:' + event.result);
+    console.log('(lastImage)=onlast action: ' + Action[event.action]);
+    console.log('(lastImage)=onlast result:' + event.result);
     this.isLastImage = event;
   }
 
   onCloseImageModal(event: ImageModalEvent) {
-    console.log('onClose action: ' + Action[event.action]);
-    console.log('onClose result:' + event.result);
+    console.log('(close)=onClose action: ' + Action[event.action]);
+    console.log('(close)=onClose result:' + event.result);
     this.closeImageModal = event;
   }
 

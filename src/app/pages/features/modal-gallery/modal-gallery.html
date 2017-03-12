@@ -2,12 +2,12 @@
 
   <!-- TODO Add link to github sources -->
   <!-- Add dark green hover effect on text -->
-  <a href="#"><u class="text-success"><h1 class="text-success">ModalGallery</h1></u></a>
-  <p>The ModalGallery component is a collection of Images. It displays all (or some) images as
+  <a id="ModalGallery" href="#"><u class="text-success"><h1 class="text-success">ModalGallery</h1></u></a>
+  <p>The ModalGallery component is a collection of Images. It displays images as
     thumbnails in a single row. Clicking on one of them, the image will be showed in full screen in a modal way.</p>
   <p>In addition to this, ModalGallery provides navigation between modal images with both mouse and keyboard and it
     can enable/disable download features. To conclude, it is also possible to configure descriptions and to add a button
-    to navigate to an external url.</p>
+    to navigate to an external URL.</p>
   <br>
   <table class="table table-hover table-sm">
     <tbody>
@@ -30,29 +30,13 @@
           <td><code>modalImages</code></td>
           <td>
             <div>
-              <i>Type: </i><code>Array&lt;<code><a href="#">Image</a></code>&gt; | Observable&lt;Array&lt;<code><a
-              href="#">Image</a></code>&gt;&gt;</code>
+              <i>Type: </i><code>Array&lt;<code><a simplePageScroll href="#Image">Image</a></code>&gt; | Observable&lt;Array&lt;<code><a
+              simplePageScroll href="#Image">Image</a></code>&gt;&gt;</code>
             </div>
             <div>
-              An array of <code>Image</code> objects or an Observable or it that represent both the thumb gallery and the
-              modal
-              images. In fact, an <code>Image</code> is an object with both thumb and
-              image source paths. For more info about <code>Image</code>, please check <a href="#">HERE</a>.
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>imagePointer</code></td>
-          <td>
-            <div>
-              <i>Type: </i><code>number</code>
-            </div>
-            <div>
-              <p>Optional parameter useful to open the modal gallery (passing a value >=0) showing the image with
-                index = <code>imagePointer</code>.</p>
-              <p>I recommend to use this input, only if you want to build a custom gallery with "+n more" feature.
-                Otherwise, you shouldn't pass this value (leave it undefined). For more information about that, I really encourage
-                to see the official example to understand what I'm saying.</p>
+              An array of <a simplePageScroll href="#Image"><code>Image</code></a> objects or an Observable of it that represent both the thumb gallery and the
+              modal images. In fact, an <a simplePageScroll href="#Image"><code>Image</code></a> is an object with both thumb and
+              image source paths. For more info about <a simplePageScroll href="#Image"><code>Image</code></a>, please check <a simplePageScroll href="#Image">HERE</a>.
             </div>
           </td>
         </tr>
@@ -60,16 +44,14 @@
           <td><code>downloadable</code></td>
           <td>
             <div>
-              <i>Type: </i><code>boolean</code>
+              <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
               <p>If true, you'll be able to download the current modal image always with keyboard shortcut (<kbd>ctrl</kbd>+<kbd>s</kbd>
                 or <kbd>cmd</kbd>+<kbd>s</kbd>),
                 but the download button will be displayed only if <code>showDownloadButton</code> will be true. Otherwise,
                 all download features will be disabled. <code>downloadable=false</code> by default</p>
-              <p>Please be careful: on SmartPhones and Tablets you can't use keyboard shortcuts, so if you want to enable
-                your
-                users to download your images, please enable both <code>downloadable</code> and
+              <p>Please be careful: on SmartPhones and Tablets you can't use keyboard shortcuts, so to download images, please enable both <code>downloadable</code> and
                 <code>showDownloadButton</code> to add the download button.</p>
             </div>
           </td>
@@ -78,7 +60,7 @@
           <td><code>description</code></td>
           <td>
             <div>
-              <i>Type: </i><code><a href="#">Description</a></code> interface
+              <i>Type: </i><code><a simplePageScroll href="#DescriptionInterface">Description</a></code> interface<span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
               Interface to specify a custom description either a full string or an object with string properties.
@@ -102,7 +84,7 @@
           <td><code>showDownloadButton</code></td>
           <td>
             <div>
-              <i>Type: </i><code>boolean</code>
+              <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
               <p>If both <code>downloadable</code> and <code>showDownloadButton</code> are true,
@@ -115,11 +97,27 @@
           <td><code>showExtUrlButton</code></td>
           <td>
             <div>
-              <i>Type: </i><code>boolean</code>
+              <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
-              <p>If true and the image url is defined, the external url button will
+              <p>If true and the image URL is defined, the external URL button will
                 be displayed in the modal view. Otherwise, not. <code>downloadable=false</code> by default</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>imagePointer</code></td>
+          <td>
+            <div>
+              <i>Type: </i><code>number</code><span class="badge badge-default pull-right">optional</span>
+            </div>
+            <div>
+              <p>Parameter useful to open the modal gallery (passing a value >=0) showing the image with
+                index = <code>imagePointer</code>.</p>
+              <p>I recommend to use this input, only if you want to build a custom gallery with "+n more" feature.
+                Otherwise, you shouldn't pass this value (leave it undefined). For more information about that, I really encourage
+                to see the official example (<a [routerLink]="['//demo/array-pointer']">Array example</a> or <a [routerLink]="['/demo/observable-pointer']">Observable example</a>) to understand what I'm saying.</p>
+              <p>Also, please be careful, because I'm planning to change this feature in the next major relase (still unscheduled).</p>
             </div>
           </td>
         </tr>
@@ -134,35 +132,59 @@
         <tr>
           <td><code>close</code></td>
           <td>
-            <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the modal view closes.</p>
-            <p>It contains TODO TODO TODO</p>
+            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal view closes.</p>
+            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <ul>
+              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code></li>
+              <li>result: <code>true</code></li>
+            </ul>
           </td>
         </tr>
         <tr>
           <td><code>show</code></td>
           <td>
-            <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the modal image will be visible.</p>
+            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal image will be visible.</p>
+            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <ul>
+              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.LOAD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>result: <code>number</code> (index of an image)</li>
+            </ul>
           </td>
         </tr>
         <tr>
           <td><code>firstImage</code></td>
           <td>
-            <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the first image in
+            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the first image in
               <code>modalImages</code> will be visible.</p>
+            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <ul>
+              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>result: <code>true</code></li>
+            </ul>
           </td>
         </tr>
         <tr>
           <td><code>lastImage</code></td>
           <td>
-            <p>An <code><a href="#">ImageModalEvent</a></code> right <b>before</b> that the last image in
+            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the last image in
               <code>modalImages</code> will be visible.</p>
+            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <ul>
+              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>result: <code>true</code></li>
+            </ul>
           </td>
         </tr>
         <tr>
           <td><code>hasData</code></td>
           <td>
-            <p>An <code><a href="#">ImageModalEvent</a></code> right <b>after</b> that the library finished
+            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>after</b> that the library finished
               to process input <code>modalImages</code>.</p>
+            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <ul>
+              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.LOAD</a></code></li>
+              <li>result: <code>true</code></li>
+            </ul>
           </td>
         </tr>
       </tbody>
@@ -171,7 +193,7 @@
 
   <br>
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Image</h1></u></a>
+  <a id="Image" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Image</h1></u></a>
   <p>The main object that represents an Image with both thumbnail, description and so on.
     To initialize <code>ModalGallery</code> you have to build an array/Observable of these objects.</p>
   <br>
@@ -221,8 +243,8 @@
             <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
           </div>
           <div>
-            <p>Optional external url path. You must use a valid url, because <code>angular-modal-gallery</code>
-              will simply navigate to this url</p>
+            <p>Optional external URL path. You must use a valid URL, because <code>angular-modal-gallery</code>
+              will simply navigate to this URL</p>
           </div>
         </td>
       </tr>
@@ -231,7 +253,7 @@
 
   <br>
 
-  <a href="#"><u class="text-success"><h1 class="text-success">ImageModalEvent</h1></u></a>
+  <a id="ImageModalEvent" href="#"><u class="text-success"><h1 class="text-success">ImageModalEvent</h1></u></a>
   <p>The payload of all events emitted by this library.</p>
   <br>
   <table class="table table-hover table-sm">
@@ -243,7 +265,7 @@
             <i>Type: </i><code>Action</code>
           </div>
           <div>
-            <p>It's the enum <a href="#">Action</a></p>
+            <p>It's the enum <code><a simplePageScroll href="#ActionEnum">Action</a></code></p>
           </div>
         </td>
       </tr>
@@ -264,7 +286,7 @@
 
   <br>
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Description</h1></u></a>
+  <a id="DescriptionInterface" href="#"><u class="text-success"><h1 class="text-success">Description</h1></u></a>
   <p>Interface to set a custom description.</p>
   <br>
   <table class="table table-hover table-sm">
@@ -276,7 +298,7 @@
             <i>Type: </i><code>string</code><span class="badge badge-default pull-right">optional</span>
           </div>
           <div>
-            <p>It's the beginning part of the description. By default its value is `Image`,
+            <p>It's the beginning part of the description. By default its value is the string 'Image',
               but you can change the language specifying your value, for instance 'Immagine' (italian),
               'Bild' (german), 'Imagen' (spanish) or also an empty string ''.</p>
             <p>Example: `<code>imageText</code> 2/12 - bla bla`</p>
@@ -316,9 +338,8 @@
           <div>
             <p>It's the full text description. If you set this value, all others will be ignored.</p>
             <p>Obviously, if you want a dynamic description with the current image number and so on,
-              you have to build it by yourself. Otherwise, you the other parameters of this object
-              to customize the default description.
-              have to build your description </p>
+              you have to build it by yourself. Otherwise, you should use the other parameters of this object
+              to customize the default description. </p>
           </div>
         </td>
       </tr>
@@ -327,7 +348,7 @@
 
   <br>
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Action</h1></u></a>
+  <a id="ActionEnum" href="#"><u class="text-success"><h1 class="text-success">Action</h1></u></a>
   <p>Enum that represents the source of an action. It can be one of these enum values:</p>
   <br>
   <ul>
@@ -340,7 +361,7 @@
 
   <br>
 
-  <a href="#"><u class="text-success"><h1 class="text-success">Keyboard</h1></u></a>
+  <a id="KeyboardEnum" href="#"><u class="text-success"><h1 class="text-success">Keyboard</h1></u></a>
   <p>Enum that represents keyboard's keycodes. It can be one of these enum values:</p>
   <br>
   <ul>

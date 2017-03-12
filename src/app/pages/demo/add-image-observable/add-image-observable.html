@@ -4,7 +4,7 @@
   <p>Modal gallery example with a <b class="text-success">button to add new images.</b></p>
   <br>
 
-  <h2>Live Demo <small>(Subscription + Delay of 500ms)</small> <button class="btn btn-danger btn-sm" (click)="addRandomImage()">
+  <h2>Live Demo <small>(Manual subscription + Delay of 500ms)</small> <button class="btn btn-danger btn-sm" (click)="addRandomImage()">
     <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add random image</button>
   </h2>
   <br>
@@ -14,10 +14,21 @@
   <section>
     <h2>Code</h2>
     <br>
+
+    <h5>Template</h5>
+    <br>
     <pre>
+      &lt;button class="btn btn-danger btn-sm" (click)="addRandomImage()"&gt;
+        &lt;i class="fa fa-plus" aria-hidden="true"&gt;&lt;/i&gt;&nbsp;&nbsp;Add random image
+      &lt;/button&gt;
       &lt;modal-gallery [modalImages]="imagesArraySubscribed"&gt;&lt;/modal-gallery&gt;
     </pre>
+    <h5>Typescript</h5>
+    <codemirror [(ngModel)]="codeTypescript" [config]="config">
+    </codemirror>
   </section>
+
+  <br><br>
 
   <section>
     <h2>Details</h2>

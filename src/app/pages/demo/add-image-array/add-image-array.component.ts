@@ -45,8 +45,19 @@ export class AddImageArrayComponent {
 
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
+  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  codeTypescript: string;
+
   constructor(private titleService: TitleService) {
     this.titleService.titleEvent.emit('Demo - Add image array');
+
+    this.codeTypescript =
+      `  imagesArray: Observable<Array<Image>>; // init this value with your images
+
+  addRandomImage() {
+    this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.imagesArray.length)]);
+  }`;
+
   }
 
   addRandomImage() {

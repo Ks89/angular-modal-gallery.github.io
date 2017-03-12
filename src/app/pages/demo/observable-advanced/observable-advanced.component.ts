@@ -50,10 +50,32 @@ export class ObservableAdvancedComponent implements OnInit, OnDestroy {
   // observable of an array of images with a delay to simulate a network request
   imagesArraySubscribed: Array<Image>;
 
+  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  codeTypescript: string;
+
   private subscription: Subscription;
 
   constructor(private titleService: TitleService) {
     this.titleService.titleEvent.emit('Demo - Observable advanced');
+
+    this.codeTypescript =
+      `  // IMAGES_ARRAY is an Array<Image> that you have to initialize with your images
+  imagesArraySubscribed: Array<Image>;
+  private subscription: Subscription;
+  
+  ngOnInit() {
+    this.subscription = Observable.of(IMAGES_ARRAY).delay(500)
+      .subscribe((val: Array<Image>) => {
+        this.imagesArraySubscribed = val;
+    });
+  }
+
+  ngOnDestroy() {
+    if(this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }`;
+
   }
 
   ngOnInit() {

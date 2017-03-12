@@ -4,7 +4,7 @@
   <p>Advanced modal gallery example with <b class="text-success">manual subscription.</b></p>
   <br>
 
-  <h2>Live Demo <small>(Subscription + Delay of 500ms)</small></h2>
+  <h2>Live Demo <small>(Manual subscription + Delay of 500ms)</small></h2>
   <br>
   <modal-gallery [modalImages]="imagesArraySubscribed"></modal-gallery>
   <br><br>
@@ -12,10 +12,18 @@
   <section>
     <h2>Code</h2>
     <br>
+
+    <h5>Template</h5>
+    <br>
     <pre>
       &lt;modal-gallery [modalImages]="imagesArraySubscribed"&gt;&lt;/modal-gallery&gt;
     </pre>
+    <h5>Typescript</h5>
+    <codemirror [(ngModel)]="codeTypescript" [config]="config">
+    </codemirror>
   </section>
+
+  <br><br>
 
   <section>
     <h2>Details</h2>
