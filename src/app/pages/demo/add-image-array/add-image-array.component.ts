@@ -48,19 +48,23 @@ export class AddImageArrayComponent {
   config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
   codeTypescript: string;
 
+  private originalArrayLength: number = IMAGES_ARRAY.length;
+
   constructor(private titleService: TitleService) {
     this.titleService.titleEvent.emit('Demo - Add image array');
 
     this.codeTypescript =
       `  imagesArray: Observable<Array<Image>>; // init this value with your images
-
+  
+  private originalArrayLength: number = // init this value with the number of images
+  
   addRandomImage() {
-    this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.imagesArray.length)]);
+    this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.originalArrayLength)]);
   }`;
 
   }
 
   addRandomImage() {
-    this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.imagesArray.length)]);
+    this.imagesArray.push(this.imagesArray[Math.floor(Math.random() * this.originalArrayLength)]);
   }
 }

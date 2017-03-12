@@ -53,6 +53,8 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
   config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
   codeTypescript: string;
 
+  private originalArrayLength: number = IMAGES_ARRAY.length;
+
   private subscription: Subscription;
 
   constructor(private titleService: TitleService) {
@@ -61,11 +63,13 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
     this.codeTypescript =
       `   // IMAGES_ARRAY is an Array<Image> that you have to initialize with your images
   imagesArraySubscribed: Array<Image>;
+  
+  private originalArrayLength: number = IMAGES_ARRAY.length;
 
   private subscription: Subscription;
 
   addRandomImage() {
-    this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.imagesArraySubscribed.length)]);
+    this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.originalArrayLength)]);
   }
 
   ngOnInit() {
@@ -83,7 +87,7 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
   }
 
   addRandomImage() {
-    this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.imagesArraySubscribed.length)]);
+    this.imagesArraySubscribed.push(this.imagesArraySubscribed[Math.floor(Math.random() * this.originalArrayLength)]);
   }
 
   ngOnInit() {
