@@ -61,10 +61,8 @@ export class ObservableImagePointerComponent implements OnDestroy {
     <div class="float-left" *ngIf="i <= 2">
       <a class="more" *ngIf="i==2" (click)="openImageModalObservable(img)"> +{{(images | async)?.length - 3}}
         more </a>
-      <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}"
-        (click)="openImageModalObservable(img)" alt='{{img.description}}'/>
-      <img *ngIf="!img.thumb" class="list-img" src="{{img.img}}"
-        (click)="openImageModalObservable(img)" alt='{{img.description}}'/>
+      <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}" (click)="openImageModalObservable(img)" alt='{{img.description}}'/>
+      <img *ngIf="!img.thumb" class="list-img" src="{{img.img}}" (click)="openImageModalObservable(img)" alt='{{img.description}}'/>
     </div>
   </div>
   <div *ngIf="openModalWindowObservable">
@@ -81,7 +79,8 @@ export class ObservableImagePointerComponent implements OnDestroy {
     private subscription: Subscription;
 
     openImageModalObservable(image: Image) {
-      this.subscription = this.images.subscribe((val: Array<Image>) => {
+      this.subscription = this.images.subscribe((val: Image[]) => {
+        this.imagePointerObservable = val.indexOf(image);
         this.openModalWindowObservable = true;
       });
     }
@@ -101,7 +100,8 @@ export class ObservableImagePointerComponent implements OnDestroy {
   }
 
   openImageModalObservable(image: Image) {
-    this.subscription = this.images.subscribe((val: Array<Image>) => {
+    this.subscription = this.images.subscribe((val: Image[]) => {
+      this.imagePointerObservable = val.indexOf(image);
       this.openModalWindowObservable = true;
     });
   }
