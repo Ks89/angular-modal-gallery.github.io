@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import { routing } from './features.routing';
 
-import {FEATURES_COMPONENTS} from "./components";
+import { FEATURES_COMPONENTS } from "./components";
 import { SharedModule } from "../../shared/shared.module";
 
 // ********************** angular-modal-gallery *****************************
@@ -12,7 +12,7 @@ import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`np
 import { ModalGalleryModule } from 'angular-modal-gallery';
 // **************************************************************************
 
-import { Ng2SimplePageScrollModule } from 'ng2-simple-page-scroll';
+import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { Ng2SimplePageScrollModule } from 'ng2-simple-page-scroll';
     CommonModule,
     routing,
     SharedModule,
-    Ng2SimplePageScrollModule.forRoot(),
+    Ng2PageScrollModule.forRoot(),
     ModalGalleryModule // no for root here
   ],
   declarations: [
@@ -28,4 +28,9 @@ import { Ng2SimplePageScrollModule } from 'ng2-simple-page-scroll';
   ]
 })
 export class FeaturesModule {
+  constructor() {
+    PageScrollConfig.defaultScrollOffset = 30;
+    PageScrollConfig.defaultDuration = 200;
+    PageScrollConfig.defaultInterruptible = false;
+  }
 }

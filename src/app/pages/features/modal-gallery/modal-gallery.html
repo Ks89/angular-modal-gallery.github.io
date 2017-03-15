@@ -30,13 +30,13 @@
           <td><code>modalImages</code></td>
           <td>
             <div>
-              <i>Type: </i><code>Array&lt;<code><a simplePageScroll href="#Image">Image</a></code>&gt; | Observable&lt;Array&lt;<code><a
-              simplePageScroll href="#Image">Image</a></code>&gt;&gt;</code>
+              <i>Type: </i><code>Array&lt;<code><a pageScroll href="#Image">Image</a></code>&gt; | Observable&lt;Array&lt;<code><a
+              pageScroll href="#Image">Image</a></code>&gt;&gt;</code>
             </div>
             <div>
-              An array of <a simplePageScroll href="#Image"><code>Image</code></a> objects or an Observable of it that represent both the thumb gallery and the
-              modal images. In fact, an <a simplePageScroll href="#Image"><code>Image</code></a> is an object with both thumb and
-              image source paths. For more info about <a simplePageScroll href="#Image"><code>Image</code></a>, please check <a simplePageScroll href="#Image">HERE</a>.
+              An array of <a pageScroll href="#Image"><code>Image</code></a> objects or an Observable of it that represent both the thumb gallery and the
+              modal images. In fact, an <a pageScroll href="#Image"><code>Image</code></a> is an object with both thumb and
+              image source paths. For more info about <a pageScroll href="#Image"><code>Image</code></a>, please check <a pageScroll href="#Image">HERE</a>.
             </div>
           </td>
         </tr>
@@ -60,7 +60,7 @@
           <td><code>description</code></td>
           <td>
             <div>
-              <i>Type: </i><code><a simplePageScroll href="#DescriptionInterface">Description</a></code> interface<span class="badge badge-default pull-right">optional</span>
+              <i>Type: </i><code><a pageScroll href="#DescriptionInterface">Description</a></code> interface<span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
               Interface to specify a custom description either a full string or an object with string properties.
@@ -132,10 +132,10 @@
         <tr>
           <td><code>close</code></td>
           <td>
-            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal view closes.</p>
-            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal view closes.</p>
+            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code></li>
+              <li>action: <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -143,10 +143,10 @@
         <tr>
           <td><code>show</code></td>
           <td>
-            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal image will be visible.</p>
-            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal image will be visible.</p>
+            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.LOAD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>action: <code><a pageScroll href="#ActionEnum">Action.LOAD</a></code> or <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a pageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
               <li>result: <code>number</code> (index of an image)</li>
             </ul>
           </td>
@@ -154,11 +154,11 @@
         <tr>
           <td><code>firstImage</code></td>
           <td>
-            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the first image in
+            <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the first image in
               <code>modalImages</code> will be visible.</p>
-            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>action: <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a pageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -166,11 +166,11 @@
         <tr>
           <td><code>lastImage</code></td>
           <td>
-            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the last image in
+            <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the last image in
               <code>modalImages</code> will be visible.</p>
-            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a simplePageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>action: <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code> or <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a pageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -178,11 +178,11 @@
         <tr>
           <td><code>hasData</code></td>
           <td>
-            <p>An <code><a simplePageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>after</b> that the library finished
+            <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>after</b> that the library finished
               to process input <code>modalImages</code>.</p>
-            <p>It contains an <code><a simplePageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: <code><a simplePageScroll href="#ActionEnum">Action.LOAD</a></code></li>
+              <li>action: <code><a pageScroll href="#ActionEnum">Action.LOAD</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -265,7 +265,7 @@
             <i>Type: </i><code>Action</code>
           </div>
           <div>
-            <p>It's the enum <code><a simplePageScroll href="#ActionEnum">Action</a></code></p>
+            <p>It's the enum <code><a pageScroll href="#ActionEnum">Action</a></code></p>
           </div>
         </td>
       </tr>
