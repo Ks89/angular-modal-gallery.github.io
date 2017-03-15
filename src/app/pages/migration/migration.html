@@ -11,17 +11,19 @@
     </div>
     <div class="col-12 col-md-9 pull-md-3">
 
-      <h3>3.0.0 is out! And it's really really big</h3>
+      <h3>3.0.0 is out! And it's really big</h3>
       <br><hr>
-      <p>I know, <b>major releases with breaking changes are a pain in the ass, but I had to do this things to be able to improve this library in the upcoming versions.</b></p>
+      <p>I know, <b>major releases with breaking changes are a pain in the ass, but I had to do this thing to be able to improve this library in upcoming versions.</b></p>
       <p>I decided to change the structure of this library, the building process, some dependencies, the entire documentation and finally some APIs</p>
-      <p>I really hope that, after possible difficulties at the beginning, you'll love this library again :)</p>
+      <p>I really hope that, after possible difficulties at the beginning, you'll love angular-modal-gallery  again :)</p>
       <p><small>by ks89</small></p>
       <hr>
 
       <p>In order to migrate your application from <code>angular-modal-gallery</code> 2.x.x to 3.x.x, please follow these steps:</p>
 
-      <ul>
+      <h4>For all users</h4>
+
+      <ol>
         <li>Update <code>angular-modal-gallery</code> to <code>^3.0.0</code> in your package.json and run <code>npm i</code></li>
         <li>
           After that, run these commands:
@@ -30,25 +32,6 @@
             <li><code>npm i --save-dev @types/hammerjs @types/mousetrap</code></li>
           </ul>
         </li>
-        <li>If you are using SystemJs you should also import <code>hammerjs</code> and <code>mousetrap</code> adding:</li>
-        <pre>
-  let map = &#123;
-    'app'                       : 'app',
-    '@angular'                  : 'node_modules/@angular',
-    'rxjs'                      : 'node_modules/rxjs',
-    'angular-modal-gallery'     : 'node_modules/angular-modal-gallery/dist/bundles',
-    <b>'hammerjs'                  : 'node_modules/hammerjs',
-    'mousetrap'                 : 'node_modules/mousetrap'</b>
-  &#125;;
-  // packages tells the System loader how to load when no filename and/or no extension
-  let packages = &#123;
-    'app'                       : &#123; main: 'main' &#125;,
-    'rxjs'                      : &#123; main: 'Rx' &#125;,
-    <b>'hammerjs'                  : &#123; main: 'hammer.js' &#125;,
-    'mousetrap'                 : &#123; main: 'mousetrap.js'&#125;,</b>
-    'angular-modal-gallery'     : &#123; main: 'angular-modal-gallery.umd.js' &#125;
-  &#125;;
-        </pre>
         <li>Import both <code>hammerjs</code> and <code>mousetrap</code> into your main module (where you imported ModalGalleryModule.forRoot() in this way:</li>
         <br>
         <pre>
@@ -74,14 +57,14 @@
           If you are confused and you need need help, please open an issue :)</li>
 
         <li>Update your template (.html)
-          <ul>
+          <ol>
             <li>replacing the tag <code>imageModal</code> with <code>modal-gallery</code></li>
             <li>replacing the optional close event <code>(cancelEvent)="yourFunction()"</code> with <code>(close)="yourFunction($event)"</code></li>
-          </ul>
+          </ol>
         </li>
 
         <li>Update your component (.ts)
-          <ul>
+          <ol>
             <li>add this new import at the top of your component: <code>import &#123;Image, ImageModalEvent&#125; from 'angular-modal-gallery';</code></li>
             <li>build an <code>Image[]</code> with your images, instead of a simple array of objects, now you have to instantiate an array of <code>Image</code> object, so, for instance:</li>
             <pre><b>
@@ -95,17 +78,42 @@
   ];
             </b></pre>
             and this array will be the input <code>[modalImages]="images"</code> in <code>angular-modal-gallery</code> component in your html file.
-          </ul>
+          </ol>
         </li>
-      </ul>
+        <li>DONE!!!</li>
+      </ol>
 
 
+      <h4>Only for SystemJs users</h4>
+      <p>You should also import <code>hammerjs</code> and <code>mousetrap</code> adding:</p>
+      <pre>
+  let map = &#123;
+    'app'                       : 'app',
+    '@angular'                  : 'node_modules/@angular',
+    'rxjs'                      : 'node_modules/rxjs',
+    'angular-modal-gallery'     : 'node_modules/angular-modal-gallery/dist/bundles',
+    <b>'hammerjs'                  : 'node_modules/hammerjs',
+    'mousetrap'                 : 'node_modules/mousetrap'</b>
+  &#125;;
+  // packages tells the System loader how to load when no filename and/or no extension
+  let packages = &#123;
+    'app'                       : &#123; main: 'main' &#125;,
+    'rxjs'                      : &#123; main: 'Rx' &#125;,
+    <b>'hammerjs'                  : &#123; main: 'hammer.js' &#125;,
+    'mousetrap'                 : &#123; main: 'mousetrap.js'&#125;,</b>
+    'angular-modal-gallery'     : &#123; main: 'angular-modal-gallery.umd.js' &#125;
+  &#125;;
+        </pre>
+
+
+      <h4>Only for [imagePointer]'s users</h4>
 
       <li>If your are using the <code>[imagePointer]</code> input, please update <code>.list-img</code> selector inside your CSS/SCSS in this way:</li>
       <pre>
   .list-img &#123;
-    <b>margin-top: 2px;</b>
-    cursor: pointer;
+  <b>height: 50px;</b>
+     margin-top: 2px;
+     cursor: pointer;
   &#125;</pre> and check the official example to update also your template, accordingly. For instance, with version 3.0.0 you need something like this:
       <br><br>
       <pre>
