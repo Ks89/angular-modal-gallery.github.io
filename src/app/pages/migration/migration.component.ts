@@ -22,30 +22,12 @@
  * SOFTWARE.
  */
 
-import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { NotFound404Component } from './pages/404/not-found404.component';
-import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
-import { MigrationComponent } from './pages/migration/migration.component';
+import { Component } from '@angular/core';
 
-export const ROUTES: Routes = [
-  { path: '',                                component: HomeComponent },
-  { path: 'home',                            component: HomeComponent },
-  { path: 'gettingStarted',                  component: GettingStartedComponent },
-
-  {
-    path: 'features',
-    loadChildren: './pages/features/features.module#FeaturesModule',
-    data: { preload: true }
-  },
-
-  {
-    path: 'demo',
-    loadChildren: './pages/demo/demo.module#DemoModule',
-    data: { preload: true }
-  },
-
-  { path: 'migration',                       component: MigrationComponent },
-
-  { path: '**',                              component: NotFound404Component }
-];
+@Component({
+  selector: 'mmw-migration-page',
+  styleUrls: ['migration.scss'],
+  templateUrl: 'migration.html'
+})
+export class MigrationComponent {
+}

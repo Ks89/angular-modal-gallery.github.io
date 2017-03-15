@@ -65,7 +65,6 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
   providers: [],
   bootstrap: [ ApplicationComponent ]
 })
-
 export class AppModule {
 
   // ----------- Hot Module Replacement via AngularClass library - BEGIN ------------
