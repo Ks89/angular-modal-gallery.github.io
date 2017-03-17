@@ -40,5 +40,6 @@ interface JQuery {
 
 // webpack
 declare const webpack: {
-  ENV: string
+  ENV: string,
+  IMAGE_PATH_PREFIX: string
 };

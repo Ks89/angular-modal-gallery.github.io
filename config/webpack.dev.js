@@ -35,6 +35,7 @@ const DllBundlesPlugin            = require('webpack-dll-bundles-plugin').DllBun
 
 const commonConfig                = require('./webpack.common');
 const helpers                     = require('./helpers');
+const properties                  = require('./properties');
 
 const ENV = process.env.NODE_ENV = 'dev';
 const HOST = process.env.HOST || 'localhost';
@@ -122,7 +123,12 @@ module.exports = webpackMerge(commonConfig, {
       filename: '[name].css',
       allChunks: true
     }),
-    new DefinePlugin({'webpack': {'ENV': JSON.stringify(METADATA.env)}}),
+    new DefinePlugin({
+      'webpack': {
+        'ENV': JSON.stringify(METADATA.env),
+        'IMAGE_PATH_PREFIX': JSON.stringify(properties.IMAGE_PATH_PREFIX)
+      }
+    }),
 
     new DllBundlesPlugin({
       bundles: {

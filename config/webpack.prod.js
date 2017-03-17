@@ -35,13 +35,10 @@ const LoaderOptionsPlugin     = require('webpack/lib/LoaderOptionsPlugin');
 
 const commonConfig            = require('./webpack.common.js');
 const helpers                 = require('./helpers');
+const properties              = require('./properties');
 
 const ENV = process.env.NODE_ENV = 'production';
 const METADATA = {env: ENV};
-
-// GITHUB => use deploy config for github
-const GITHUB                  = helpers.hasNpmFlag('github');
-console.log(`isGithub: ${GITHUB}`);
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
@@ -50,7 +47,7 @@ module.exports = webpackMerge(commonConfig, {
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].map',
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: GITHUB ? '/angular-modal-gallery.github.io/' : './'
+    publicPath: properties.GITHUB ? `${properties.GITHUB_PATH}/` : './'
   },
   module: {
     rules: [
@@ -89,7 +86,12 @@ module.exports = webpackMerge(commonConfig, {
       filename: '[name].[contenthash].css',
       allChunks: true
     }),
-    new DefinePlugin({'webpack': {'ENV': JSON.stringify(METADATA.env)}}),
+    new DefinePlugin({
+      'webpack': {
+        'ENV': JSON.stringify(METADATA.env),
+        'IMAGE_PATH_PREFIX': JSON.stringify(properties.IMAGE_PATH_PREFIX)
+      }
+    }),
     new WebpackMd5HashPlugin(),
     new CompressionPlugin({regExp: /\.css$|\.html$|\.js$|\.map$/}),
     new UglifyJsPlugin({

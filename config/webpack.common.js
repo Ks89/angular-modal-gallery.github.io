@@ -23,7 +23,6 @@
  */
 
 const webpack                      = require('webpack');
-const DefinePlugin                 = require('webpack/lib/DefinePlugin');
 const ProvidePlugin                = require('webpack/lib/ProvidePlugin');
 const CommonsChunkPlugin           = require('webpack/lib/optimize/CommonsChunkPlugin');
 const LoaderOptionsPlugin          = require('webpack/lib/LoaderOptionsPlugin');
@@ -39,15 +38,14 @@ const ScriptExtHtmlWebpackPlugin   = require('script-ext-html-webpack-plugin');
 const HtmlElementsPlugin           = require('./html-elements-plugin');
 
 const helpers                      = require('./helpers');
+const properties                  = require('./properties');
+
 const TITLE                        = 'angular-modal-gallery';
 const TEMPLATE_PATH                = './src/index.ejs';
 const TEMPLATE_HTML                = 'index.html';
 
 const AOT                          = helpers.hasNpmFlag('aot');
 const TS_CONFIG                    = AOT ? 'tsconfig-aot.json' : 'tsconfig.json';
-
-// GITHUB => use deploy config for github
-const GITHUB                       = helpers.hasNpmFlag('github');
 
 module.exports = {
   entry: {
@@ -150,7 +148,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: TITLE,
       inject: true,
-      baseHref: GITHUB ? '/angular-modal-gallery.github.io/' : '/',
+      baseHref: properties.GITHUB ? `${properties.GITHUB_PATH}/` : '/',
       // chunksSortMode: 'auto', // auto is the default value
       chunks: ['polyfills', 'vendor', 'app'],
       template: TEMPLATE_PATH,
