@@ -46,6 +46,9 @@ const TEMPLATE_HTML                = 'index.html';
 const AOT                          = helpers.hasNpmFlag('aot');
 const TS_CONFIG                    = AOT ? 'tsconfig-aot.json' : 'tsconfig.json';
 
+// GITHUB => use deploy config for github
+const GITHUB                       = helpers.hasNpmFlag('github');
+
 module.exports = {
   entry: {
     polyfills: './src/polyfills.ts',
@@ -147,6 +150,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: TITLE,
       inject: true,
+      baseHref: GITHUB ? '/angular-modal-gallery.github.io/' : '/',
       // chunksSortMode: 'auto', // auto is the default value
       chunks: ['polyfills', 'vendor', 'app'],
       template: TEMPLATE_PATH,

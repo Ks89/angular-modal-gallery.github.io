@@ -39,6 +39,10 @@ const helpers                 = require('./helpers');
 const ENV = process.env.NODE_ENV = 'production';
 const METADATA = {env: ENV};
 
+// GITHUB => use deploy config for github
+const GITHUB                  = helpers.hasNpmFlag('github');
+console.log(`isGithub: ${GITHUB}`);
+
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
   output: {
@@ -46,7 +50,7 @@ module.exports = webpackMerge(commonConfig, {
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].map',
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: './'
+    publicPath: GITHUB ? '/angular-modal-gallery.github.io/' : './'
   },
   module: {
     rules: [
