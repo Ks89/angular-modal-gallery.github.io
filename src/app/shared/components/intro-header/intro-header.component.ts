@@ -25,11 +25,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../..' : webpack.IMAGE_PATH_PREFIX;
+
 @Component({
   selector: 'mmw-intro-header',
   templateUrl: 'intro-header.html',
   styleUrls: ['intro-header.scss']
 })
 export class IntroHeaderComponent {
+
+  path: string = PATH + '/assets/icon_site.png';
+
+
   constructor(private router: Router) {}
 }

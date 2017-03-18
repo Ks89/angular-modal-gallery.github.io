@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
 
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 
-const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../..' : webpack.IMAGE_PATH_PREFIX;
+const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../../..' : webpack.IMAGE_PATH_PREFIX;
 
 @Component({
   selector: 'mmw-home-page',
@@ -34,8 +34,6 @@ const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../..' : webpack.
   templateUrl: 'home.html'
 })
 export class HomeComponent {
-
-  path: string = PATH + '/assets/icon_site.png';
 
   imagesArray: Array<Image> = [
     new Image(
