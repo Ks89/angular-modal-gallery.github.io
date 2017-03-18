@@ -35,6 +35,8 @@ const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../..' : webpack.
 })
 export class HomeComponent {
 
+  path: string = PATH + '/assets/icon_site.png';
+
   imagesArray: Array<Image> = [
     new Image(
       `${PATH}/assets/images/gallery/img1.jpg`,
