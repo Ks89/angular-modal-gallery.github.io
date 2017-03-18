@@ -108,21 +108,23 @@
 
       <h4>Only for [imagePointer]'s users</h4>
 
-      <li>If your are using the <code>[imagePointer]</code> input, please update <code>.list-img</code> selector inside your CSS/SCSS in this way:</li>
+      <p>If your are using the <code>[imagePointer]</code> input, please update <code>.list-img</code> selector inside your CSS/SCSS in this way:</p>
       <pre>
   .list-img &#123;
-  <b>height: 50px;</b>
+     <b>height: 50px;</b>
      margin-top: 2px;
      cursor: pointer;
   &#125;</pre> and check the official example to update also your template, accordingly. For instance, with version 3.0.0 you need something like this:
       <br><br>
-      <pre>
-add html code here
-      </pre>
 
-      <pre>
-        add ts code here
-      </pre>
+      <h6>Template</h6>
+      <codemirror [(ngModel)]="codeHtml" [config]="config">
+      </codemirror>
+      <br>
+      <h6>Typescript</h6>
+      <codemirror [(ngModel)]="codeTypescript" [config]="config">
+      </codemirror>
+
 
     </div>
   </div>

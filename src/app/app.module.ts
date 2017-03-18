@@ -46,6 +46,7 @@ import { ApplicationComponent } from './application/application.component';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { IdlePreloadModule } from '@angularclass/idle-preload';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { CodemirrorModule } from 'ng2-codemirror';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    CodemirrorModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     SharedModule,
     ModalGalleryModule.forRoot() // <-------------------------------------------- angular-modal-gallery module import

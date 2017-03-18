@@ -30,4 +30,35 @@ import { Component } from '@angular/core';
   templateUrl: 'migration.html'
 })
 export class MigrationComponent {
+
+  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  codeHtml: string =
+  `  <div *ngFor="let img of imagesArray; let i = index">
+    <div class="float-left" *ngIf="i <= 2">
+      <a class="more" *ngIf="i==2" (click)="openImageModal(img)">+{{imagesArray.length - 3}} more </a>
+      <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}"
+        (click)="openImageModal(img)" alt='{{img.description}}'/>
+      <img *ngIf="!img.thumb" class="list-img" src="{{img.img}}"
+        (click)="openImageModal(img)" alt='{{img.description}}'/>
+    </div>
+  </div>
+  <div *ngIf="openModalWindow">
+    <modal-gallery [modalImages]="imagesArray"
+                   [imagePointer]="imagePointer"
+                   (close)="onCloseImageModal($event)"></modal-gallery>
+  </div>`;
+
+  codeTypescript: string =
+  `  imagesArray: Array<Image>; // init this value with your images
+  openModalWindow: boolean = false;
+  imagePointer: number = 0;
+  
+  openImageModal(image: Image) {
+    this.imagePointer = this.imagesArray.indexOf(image);
+    this.openModalWindow = true;
+  }
+  
+  onCloseImageModal(event: ImageModalEvent) {
+    this.openModalWindow = false;
+  }`;
 }
