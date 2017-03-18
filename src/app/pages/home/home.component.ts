@@ -26,8 +26,7 @@ import { Component } from '@angular/core';
 
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 
-console.log(webpack.IMAGE_PATH_PREFIX);
-
+const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../..' : webpack.IMAGE_PATH_PREFIX;
 
 @Component({
   selector: 'mmw-home-page',
@@ -38,32 +37,32 @@ export class HomeComponent {
 
   imagesArray: Array<Image> = [
     new Image(
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/img1.jpg`,
+      `${PATH}/assets/images/gallery/img1.jpg`,
       null, // no thumb
       null, // no description
       'http://www.google.com'
     ),
     new Image(
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/img2.png`, // example with a PNG image
+      `${PATH}/assets/images/gallery/img2.png`, // example with a PNG image
       null, // no thumb
       'Description 2',
       null // url
     ),
     new Image(
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/img3.jpg`,
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/thumbs/img3.png`, // example with a PNG thumb image
+      `${PATH}/assets/images/gallery/img3.jpg`,
+      `${PATH}/assets/images/gallery/thumbs/img3.png`, // example with a PNG thumb image
       'Description 3',
       'http://www.google.com'
     ),
     new Image(
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/img4.jpg`,
+      `${PATH}/assets/images/gallery/img4.jpg`,
       null, // no thumb
       'Description 4',
       'http://www.google.com'
     ),
     new Image(
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/img5.jpg`,
-      `${webpack.IMAGE_PATH_PREFIX}/assets/images/gallery/thumbs/img5.jpg`,
+      `${PATH}/assets/images/gallery/img5.jpg`,
+      `${PATH}/assets/images/gallery/thumbs/img5.jpg`,
       null, // no description
       null // url
     )
