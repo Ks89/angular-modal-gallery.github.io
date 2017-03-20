@@ -2,8 +2,8 @@
 
   <!-- TODO Add link to github sources -->
   <!-- Add dark green hover effect on text -->
-  <a id="ModalGallery" href="#"><u class="text-success"><h1 class="text-success">ModalGallery</h1></u></a>
-  <p>The ModalGallery component is a collection of Images. It displays images as
+  <a id="ModalGallery" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">ModalGallery</h1></u></a>
+  <p>The ModalGallery component is a collection of images. It displays images as
     thumbnails in a single row. Clicking on one of them, the image will be showed in full screen in a modal way.</p>
   <p>In addition to this, ModalGallery provides navigation between modal images with both mouse and keyboard and it
     can enable/disable download features. To conclude, it is also possible to configure descriptions and to add a button
@@ -34,9 +34,9 @@
               pageScroll href="#Image">Image</a></code>&gt;&gt;</code>
             </div>
             <div>
-              An array of <a pageScroll href="#Image"><code>Image</code></a> objects or an Observable of it that represent both the thumb gallery and the
+              An array of <a pageScroll href="#Image"><code>Image</code></a> objects or an Observable of it, that represent both the thumb gallery and the
               modal images. In fact, an <a pageScroll href="#Image"><code>Image</code></a> is an object with both thumb and
-              image source paths. For more info about <a pageScroll href="#Image"><code>Image</code></a>, please check <a pageScroll href="#Image">HERE</a>.
+              image source paths. For more info check <a pageScroll href="#Image"><code>Image</code></a>.
             </div>
           </td>
         </tr>
@@ -69,7 +69,7 @@
                 <li>object used to compose the description, for instance in this way:
                   <p><small>`<code>imageText</code> <i>2</i> <code>numberSeparator</code> <i>12</i> <code>beforeTextDescription</code> <i>bla bla</i>`</small>,</p>
                   where `<i>2</i>` is the index of the visible image, `<i>12</i>` the total number of images and `<i>bla bla</i>`
-                  the description passed thanks to the input <code>Image</code> object.
+                  the description passed thanks to the input <a pageScroll href="#Image"><code>Image</code></a> object.
                   <p>Attention please! There aren't spaces between values. So if you want a 'text - text' you have to specify exactly ' - ', with the two spaces</p>
                   <ul>
                     <li>imageText (default is 'Image')</li>
@@ -115,10 +115,10 @@
             <div>
               <p>Parameter useful to open the modal gallery (passing a value >=0) showing the image with
                 index = <code>imagePointer</code>.</p>
-              <p>I recommend to use this input, only if you want to build a custom gallery with "+n more" feature.
+              <p>I recommend to use this input only if you want to build a custom gallery with "+n more" feature.
                 Otherwise, you shouldn't pass this value (leave it undefined). For more information about that, I really encourage
                 to see the official example (<a [routerLink]="['//demo/array-pointer']">Array example</a> or <a [routerLink]="['/demo/observable-pointer']">Observable example</a>) to understand what I'm saying.</p>
-              <p>Also, please be careful, because I'm planning to change this feature in the next major relase (still unscheduled).</p>
+              <p>Also, please be careful, because I'm planning to change this feature in the next major release (still unscheduled, probably at the end of 2017).</p>
             </div>
           </td>
         </tr>
@@ -220,7 +220,7 @@
           <div>
             <p>Optional source path of the thumbnail image. If you don't provide this path,
               <code>angular-modal-gallery</code> will scale down the image with source path equals
-              to <code>img</code> to display the thumbnail.</p>
+              to <code>img</code> to display the thumbnail. To ignore this feature, use <code>null</code>.</p>
           </div>
         </td>
       </tr>
@@ -233,7 +233,7 @@
           <div>
             <p>Optional description text.
               Attention: this is not the full description, but only the last part, after image numbers.
-              For instance: `Image 2/12 - <code>description</code>`</p>
+              For instance: `Image 2/12 - <code>description</code>`. To ignore this feature, use <code>null</code>.</p>
           </div>
         </td>
       </tr>
@@ -245,7 +245,7 @@
           </div>
           <div>
             <p>Optional external URL path. You must use a valid URL, because <code>angular-modal-gallery</code>
-              will simply navigate to this URL</p>
+              will simply navigate to this URL. To ignore this feature, use <code>null</code>.</p>
           </div>
         </td>
       </tr>
@@ -254,7 +254,7 @@
 
   <br>
 
-  <a id="ImageModalEvent" href="#"><u class="text-success"><h1 class="text-success">ImageModalEvent</h1></u></a>
+  <a id="ImageModalEvent" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">ImageModalEvent</h1></u></a>
   <p>The payload of all events emitted by this library.</p>
   <br>
   <table class="table table-hover table-sm">
@@ -278,7 +278,7 @@
           </div>
           <div>
             <p>The result/data of the emitted event. For example, it could be the index of the current image
-              or a boolean to say if images are ready to display and so on...</p>
+              or a boolean to say if images are ready to display and so on.</p>
           </div>
         </td>
       </tr>
@@ -287,7 +287,7 @@
 
   <br>
 
-  <a id="DescriptionInterface" href="#"><u class="text-success"><h1 class="text-success">Description</h1></u></a>
+  <a id="DescriptionInterface" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Description</h1></u></a>
   <p>Interface to set a custom description.</p>
   <br>
   <table class="table table-hover table-sm">
@@ -349,7 +349,7 @@
 
   <br>
 
-  <a id="ActionEnum" href="#"><u class="text-success"><h1 class="text-success">Action</h1></u></a>
+  <a id="ActionEnum" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Action</h1></u></a>
   <p>Enum that represents the source of an action. It can be one of these enum values:</p>
   <br>
   <ul>
@@ -362,7 +362,7 @@
 
   <br>
 
-  <a id="KeyboardEnum" href="#"><u class="text-success"><h1 class="text-success">Keyboard</h1></u></a>
+  <a id="KeyboardEnum" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Keyboard</h1></u></a>
   <p>Enum that represents keyboard's keycodes. It can be one of these enum values:</p>
   <br>
   <ul>

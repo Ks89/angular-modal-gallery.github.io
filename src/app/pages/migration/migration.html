@@ -54,7 +54,7 @@
 
         <li>If you are using <code>ModalGalleryModule.forRoot()</code> inside a child module, you should use simply <code>ModalGalleryModule</code> (without forRoot()).
           In fact, forRoot() should be used only for root modules. But, <b>if your module is lazy loaded, forRoot() is still mandatory.</b>
-          If you are confused and you need need help, please open an issue :)</li>
+          If you are confused and you need help, please open an issue :)</li>
 
         <li>Update your template (.html)
           <ol>
@@ -66,7 +66,7 @@
         <li>Update your component (.ts)
           <ol>
             <li>add this new import at the top of your component: <code>import &#123;Image, ImageModalEvent&#125; from 'angular-modal-gallery';</code></li>
-            <li>build an <code>Image[]</code> with your images, instead of a simple array of objects, now you have to instantiate an array of <code>Image</code> object, so, for instance:</li>
+            <li>build an <code>Image[]</code> with your images, instead of a simple array of objects, now you have to instantiate an array of <code>Image</code> objects, so for instance:</li>
             <pre><b>
   images: Array&lt;Image&gt; = [
     new Image(
