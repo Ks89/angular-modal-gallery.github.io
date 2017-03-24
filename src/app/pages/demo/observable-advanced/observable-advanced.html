@@ -33,87 +33,53 @@
         <tr>
           <th>Input (.html)</th>
           <th>Value (.ts)</th>
-          <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>[modalImages]</code></td>
+          <td><code>modalImages</code></td>
           <td>
-            <div><code>Image[]</code></div>
+            <div><i>Value: </i><code>Image[]</code></div>
+            <div><b class="text-success">Array of <code>Image</code> initialized with a manual subscription</b></div>
           </td>
-          <td><b class="text-success">Array of <code>Image</code> initialized with a manual subscription</b></td>
         </tr>
         <tr>
-          <td><code>[imagePointer]</code></td>
+          <td><code>imagePointer</code></td>
           <td>
-            <div><code>undefined</code></div>
+            <div><i>Value: </i><code>undefined</code></div>
+            <div>It will display the entire gallery</div>
           </td>
-          <td>It will display the entire gallery</td>
         </tr>
         <tr>
-          <td><code>[downloadable]</code></td>
+          <td><code>downloadable</code></td>
           <td>
-            <div><code>undefined</code></div>
+            <div><i>Value: </i><code>undefined</code></div>
             <div>(<code>false</code> by default)</div>
+            <div>Not downloadable at all</div>
           </td>
-          <td>Not downloadable at all</td>
         </tr>
         <tr>
-          <td><code>[description]</code></td>
+          <td><code>description</code></td>
           <td>
-            <div><code>undefined</code></div>
+            <div><i>Value: </i><code>undefined</code></div>
+            <div>It will use the default description</div>
           </td>
-          <td>It will use the default description</td>
         </tr>
         <tr>
-          <td><code>[showDownloadButton]</code></td>
+          <td><code>showDownloadButton</code></td>
           <td>
-            <div><code>undefined</code></div>
+            <div><i>Value: </i><code>undefined</code></div>
             <div>(<code>false</code> by default)</div>
+            <div>Download button is <span class="text-danger">hidden</span></div>
           </td>
-          <td>Download button is <span class="text-danger">hidden</span></td>
         </tr>
         <tr>
-          <td><code>[showExtUrlButton]</code></td>
+          <td><code>showExtUrlButton</code></td>
           <td>
-            <div><code>undefined</code></div>
+            <div><i>Value: </i><code>undefined</code></div>
             <div>(<code>false</code> by default)</div>
+            <div>External url button is <span class="text-danger">hidden</span></div>
           </td>
-          <td>External url button is <span class="text-danger">hidden</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <br>
-
-    <table class="table table-hover table-sm">
-      <thead>
-        <tr>
-          <th>Output (.html)</th>
-          <th>Return (.ts)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>(close)</code></td>
-          <td><code>ImageModalEvent</code></td>
-        </tr>
-        <tr>
-          <td><code>(show)</code></td>
-          <td><code>ImageModalEvent</code></td>
-        </tr>
-        <tr>
-          <td><code>(firstImage)</code></td>
-          <td><code>ImageModalEvent</code></td>
-        </tr>
-        <tr>
-          <td><code>(lastImage)</code></td>
-          <td><code>ImageModalEvent</code></td>
-        </tr>
-        <tr>
-          <td><code>(hasData)</code></td>
-          <td><code>ImageModalEvent</code></td>
         </tr>
       </tbody>
     </table>
