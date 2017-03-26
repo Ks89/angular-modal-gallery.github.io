@@ -47,6 +47,7 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 import { IdlePreloadModule } from '@angularclass/idle-preload';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { CodemirrorModule } from 'ng2-codemirror';
+import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
 
 @NgModule({
   imports: [
@@ -56,6 +57,7 @@ import { CodemirrorModule } from 'ng2-codemirror';
     FormsModule,
     ReactiveFormsModule,
     CodemirrorModule,
+    Ng2PageScrollModule.forRoot(),
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     SharedModule,
     ModalGalleryModule.forRoot() // <-------------------------------------------- angular-modal-gallery module import
@@ -69,8 +71,12 @@ import { CodemirrorModule } from 'ng2-codemirror';
 })
 export class AppModule {
 
+  constructor(public appRef: ApplicationRef) {
+    PageScrollConfig.defaultScrollOffset = 30;
+    PageScrollConfig.defaultDuration = 200;
+    PageScrollConfig.defaultInterruptible = false;
+  }
   // ----------- Hot Module Replacement via AngularClass library - BEGIN ------------
-  constructor(public appRef: ApplicationRef) {}
   hmrOnInit(store: any): any {
     if (!store || !store.state) {
       return;

@@ -20,7 +20,7 @@ import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
     CommonModule,
     routing,
     SharedModule,
-    Ng2PageScrollModule.forRoot(),
+    Ng2PageScrollModule,
     ModalGalleryModule // no for root here
   ],
   declarations: [
