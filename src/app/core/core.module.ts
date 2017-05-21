@@ -22,10 +22,27 @@
  * SOFTWARE.
  */
 
-import { Component, ViewEncapsulation } from '@angular/core';
-@Component({
-  selector: 'mmw-application',
-  templateUrl: 'application.html',
-  encapsulation: ViewEncapsulation.None
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+import { CORE_SERVICES } from './services/services';
+import { throwIfAlreadyLoaded } from './module-import-guard';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+  exports:[ ],
+  declarations: [],
+  providers: [
+    CORE_SERVICES
+  ]
 })
-export class ApplicationComponent {}
+
+export class CoreModule {
+  constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+  }
+}

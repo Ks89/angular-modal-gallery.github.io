@@ -35,6 +35,7 @@ const autoprefixer                 = require('autoprefixer');
 const ngcWebpack                   = require('ngc-webpack');
 const ScriptExtHtmlWebpackPlugin   = require('script-ext-html-webpack-plugin');
 const BundleAnalyzerPlugin         = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const VisualizerPlugin             = require('webpack-visualizer-plugin');
 
 // I'm using a plugin from npmjs.com based on the original html-elements-plugin/index.js by AngularClass
 // to prevent an issue on travis-ci.
@@ -273,6 +274,9 @@ module.exports = {
       statsOptions: null,
       // Log level. Can be 'info', 'warn', 'error' or 'silent'.
       logLevel: 'info'
+    }),
+    new VisualizerPlugin({
+      filename: './webpack-visualizer-report.html'
     })
   ],
   node: {

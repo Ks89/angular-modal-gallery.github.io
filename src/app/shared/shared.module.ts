@@ -18,9 +18,7 @@ import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
   declarations: [
     SHARED_COMPONENTS
   ],
-  providers: [
-    SERVICES
-  ]
+  providers: [ ]
 })
 
 export class SharedModule {

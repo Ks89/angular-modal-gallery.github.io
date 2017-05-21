@@ -40,8 +40,9 @@ import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------
 // **************************************************************************
 
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { COMPONENTS } from './pages/components';
-import { ApplicationComponent } from './application/application.component';
+import { AppComponent } from './app.component';
 
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { IdlePreloadModule } from '@angularclass/idle-preload';
@@ -60,14 +61,15 @@ import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
     Ng2PageScrollModule.forRoot(),
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     SharedModule,
+    CoreModule,
     ModalGalleryModule.forRoot() // <-------------------------------------------- angular-modal-gallery module import
   ],
   declarations: [
-    ApplicationComponent,
+    AppComponent,
     COMPONENTS
   ],
   providers: [],
-  bootstrap: [ ApplicationComponent ]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
 

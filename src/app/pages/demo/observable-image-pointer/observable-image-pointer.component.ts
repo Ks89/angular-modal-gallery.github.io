@@ -39,7 +39,7 @@ import {
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
-import {TitleService} from "../../../shared/services/title.service";
+import { TitleService } from '../../../core/services/title.service';
 
 @Component({
   selector: 'mmw-observable-image-pointer-page',

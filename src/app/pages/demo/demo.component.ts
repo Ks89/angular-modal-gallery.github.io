@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TitleService } from "../../shared/services/title.service";
+import { TitleService } from '../../core/services/title.service';
 
 @Component({
   selector: 'mmw-demo-page',
