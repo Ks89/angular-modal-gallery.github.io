@@ -78,12 +78,73 @@
           </td>
         </tr>
         <tr>
-          <td><small><code>showDownload Button</code></small></td>
+          <td>
+            <div>
+              <small><code>buttonsConfig</code></small>
+            </div>
+            <div>
+              <span class="badge badge-success pull-right">NEW</span>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#ButtonsConfig">ButtonsConfig</a></code><span class="badge badge-default pull-right">optional</span>
+            </div>
+            <div>
+              <p>Interface <code>ButtonsConfig</code> to configure button's visibility. All properties are optional and buttons hidden, except for the `close` button.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <small><code>keyboardConfig</code></small>
+            </div>
+            <div>
+              <span class="badge badge-success pull-right">NEW</span>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#KeyboardConfig">KeyboardConfig</a></code><span class="badge badge-default pull-right">optional</span>
+            </div>
+            <div>
+              <p>Interface <code>KeyboardConfig</code> to configure keyboard's buttons. All properties are optional ad with default values. Check <code><a pageScroll href="#KeyboardConfig">KeyboardConfig</a></code> for more information.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <small><code>enableClose Outside</code></small>
+            </div>
+            <div>
+              <span class="badge badge-success pull-right">NEW</span>
+            </div>
+          </td>
           <td>
             <div>
               <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
+              <p>If true, you can click on the semi-transparent background of modal images to close it. <code>enableCloseOutside=false</code> by default</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <small><code>showDownload Button</code></small>
+            </div>
+            <div>
+              <span class="badge badge-danger pull-right">deprecated</span>
+            </div>
+          <td>
+            <div>
+              <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
+            </div>
+            <div>
+              <p class="text-danger">PLEASE SWITCH TO <code>buttonsConfig</code>. This property will be removed with version 4.0.0.</p>
               <p>If both <code>downloadable</code> and <code>showDownloadButton</code> are true,
                 the download button will be displayed in the modal view. Otherwise, not. <code>downloadable=false</code>
                 by default</p>
@@ -91,12 +152,20 @@
           </td>
         </tr>
         <tr>
-          <td><small><code>showExtUrl Button</code></small></td>
+          <td>
+            <div>
+              <small><code>showExtUrl Button</code></small>
+            </div>
+            <div>
+              <span class="badge badge-danger pull-right">deprecated</span>
+            </div>
+          </td>
           <td>
             <div>
               <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
+              <p class="text-danger">PLEASE SWITCH TO <code>buttonsConfig</code>. This property will be removed with version 4.0.0.</p>
               <p>If true and the image URL is defined, the external URL button will
                 be displayed in the modal view. Otherwise, not. <code>downloadable=false</code> by default</p>
             </div>
@@ -340,6 +409,92 @@
           </div>
         </td>
       </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <a id="ButtonsConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">ButtonsConfig</h1></u></a>
+  <p>Interface to show/hide buttons.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><code>download</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>If both this property (<code>download</code>) and the input property <code>downloadable</code> are true, it will appear the download button</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><code>extUrl</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>If both this property (<code>extUrl</code>) is true and <code>extUrl</code> into <code>Image</code> is valid, it will appear the externalUrl button</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><code>close</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>If false, close button will be hidden. Any other values will show the button. Also, if not provided, the close button will be visible</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <a id="KeyboardConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">KeyboardConfig</h1></u></a>
+  <p>Interface to customize keyboard's buttons.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><code>esc</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>number</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>Javascript keycode to use instead of the default `esc`  button</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><code>right</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>number</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>Javascript keycode to use instead of the default `right arrow` button</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><code>left</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>number</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>Javascript keycode to use instead of the default `left arrow` button</p>
+        </div>
+      </td>
+    </tr>
     </tbody>
   </table>
 
