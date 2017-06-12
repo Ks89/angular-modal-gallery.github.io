@@ -1,20 +1,27 @@
 <div class="container">
 
-  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Array Simple example</h1></u></a>
-  <p>Minimal and simple modal gallery example.</p>
+  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Buttons Config example</h1></u></a>
+  <p>Minimal and simple modal gallery example with</p>
+  <ul>
+    <li>download button: visible</li>
+    <li>extUrl button: visible</li>
+    <li>close button: hidden</li>
+  </ul>
   <br>
 
   <h2>Live Demo</h2>
   <br>
-  <modal-gallery [modalImages]="imagesArray"></modal-gallery>
+  <modal-gallery [modalImages]="imagesArray"
+                 [downloadable]="true"
+                 [buttonsConfig]="{download: true, extUrl: true, close: false}">
+  </modal-gallery>
   <br><br>
 
   <section>
     <h2>Code</h2>
     <br>
-    <pre>
-      &lt;modal-gallery [modalImages]="imagesArray"&gt;&lt;/modal-gallery&gt;
-    </pre>
+    <codemirror [(ngModel)]="codeHtml" [config]="config">
+    </codemirror>
   </section>
 
   <section>
@@ -43,11 +50,11 @@
           </td>
         </tr>
         <tr>
+        <tr>
           <td><code>downloadable</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
-            <div>(<code>false</code> by default)</div>
-            <div>Not downloadable at all</div>
+            <div><i>Value: </i><code>true</code></div>
+            <div><b class="text-success">Downloadable with <kbd>ctrl</kbd>+<kbd>s</kbd> and <kbd>cmd</kbd>+<kbd>s</kbd></b></div>
           </td>
         </tr>
         <tr>
@@ -60,12 +67,12 @@
         <tr>
           <td><code>buttonsConfig</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
+            <div><i>Value: </i><code>&#123;download: true, extUrl: true, close: false&#125;</code></div>
             <div>
               <ul>
-                <li><i class="fa fa-download"></i> is <span class="text-danger">hidden</span></li>
-                <li><i class="fa fa-external-link"></i> is <span class="text-danger">hidden</span></li>
-                <li><i class="fa fa-close"></i> is <span class="text-success">visible</span> by default</li>
+                <li><i class="fa fa-download"></i> is <span class="text-success">visible</span></li>
+                <li><i class="fa fa-external-link"></i> is <span class="text-success">visible</span></li>
+                <li><i class="fa fa-close"></i> is <span class="text-danger">hidden</span></li>
               </ul>
             </div>
           </td>

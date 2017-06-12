@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   Image,
@@ -37,23 +37,23 @@ import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 
 @Component({
-  selector: 'mmw-exturl-simple-page',
-  templateUrl: 'exturl-simple.html',
-  styleUrls: ['exturl-simple.scss']
+  selector: 'mmw-buttons-config-page',
+  templateUrl: 'buttons-config.html',
+  styleUrls: ['buttons-config.scss']
 })
-export class ExtUrlSimpleComponent {
+export class ButtonsConfigComponent {
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
   config: any = {lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html'};
   codeHtml: string;
 
   constructor(private titleService: TitleService) {
-    this.titleService.titleEvent.emit('Demo - External URL simple');
+    this.titleService.titleEvent.emit('Demo - Buttons config');
 
     this.codeHtml =
       `<modal-gallery [modalImages]="imagesArray"
                [downloadable]="true"
-               [buttonsConfig]="{extUrl: true}">
+               [buttonsConfig]="{download: true, extUrl: true, close: false}">
 </modal-gallery>`;
   }
 }

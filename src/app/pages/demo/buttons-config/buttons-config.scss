@@ -22,38 +22,19 @@
  * SOFTWARE.
  */
 
-import { Component} from '@angular/core';
+.title {
+  background-color: #3c763d;
+  background: linear-gradient(135deg, #3c763d, #7de87d);
+  margin-top: 32px;
+  color: white;
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
-
-import * as _ from 'lodash';
-
-import { IMAGES_ARRAY } from '../images';
-import { TitleService } from '../../../core/services/title.service';
-
-@Component({
-  selector: 'mmw-exturl-simple-page',
-  templateUrl: 'exturl-simple.html',
-  styleUrls: ['exturl-simple.scss']
-})
-export class ExtUrlSimpleComponent {
-  imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
-
-  config: any = {lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html'};
-  codeHtml: string;
-
-  constructor(private titleService: TitleService) {
-    this.titleService.titleEvent.emit('Demo - External URL simple');
-
-    this.codeHtml =
-      `<modal-gallery [modalImages]="imagesArray"
-               [downloadable]="true"
-               [buttonsConfig]="{extUrl: true}">
-</modal-gallery>`;
+  h1 {
+    color: white;
   }
+}
+
+.text-shadow {
+  text-shadow: -4px 0 #fff, -3px 0 #fff, -2px 0 #fff, -1px 0 #fff, 0 0 #fff, 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, 4px 0 #fff;
+  //box-shadow: 0 1px #fff, 0 3px #0275d8;
+  //display: table;
 }

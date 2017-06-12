@@ -7,8 +7,7 @@
   <h2>Live Demo</h2>
   <br>
   <modal-gallery [modalImages]="imagesArray"
-                 [downloadable]="true"
-                 [showDownloadButton]="false">
+                 [downloadable]="true">
   </modal-gallery>
   <br><br>
 
@@ -17,8 +16,7 @@
     <br>
     <pre>
       &lt;modal-gallery [modalImages]="imagesArray"
-                     [downloadable]="true"
-                     [showDownloadButton]="false"&gt;
+                     [downloadable]="true"&gt;
       &lt;/modal-gallery&gt;
     </pre>
   </section>
@@ -70,11 +68,31 @@
         </td>
       </tr>
       <tr>
-        <td><code>showExtUrlButton</code></td>
+        <td><code>buttonsConfig</code></td>
+        <td>
+          <div><i>Value: </i><code>undefined</code></div>
+          <div>
+            <ul>
+              <li><i class="fa fa-download"></i> is <span class="text-danger">hidden</span></li>
+              <li><i class="fa fa-external-link"></i> is <span class="text-danger">hidden</span></li>
+              <li><i class="fa fa-close"></i> is <span class="text-success">visible</span> by default</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>keyboardConfig</code></td>
+        <td>
+          <div><i>Value: </i><code>undefined</code></div>
+          <div>All keyboard's keys have default values (<kbd>esc</kbd>, <kbd>&rarr;</kbd>, <kbd>&larr;</kbd> )</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>enableCloseOutside</code></td>
         <td>
           <div><i>Value: </i><code>undefined</code></div>
           <div>(<code>false</code> by default)</div>
-          <div>External url button is <span class="text-danger">hidden</span></div>
+          <div>Clicking on the semi-transparent background, modal-gallery won't do nothing</div>
         </td>
       </tr>
       </tbody>

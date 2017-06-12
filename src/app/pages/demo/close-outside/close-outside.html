@@ -1,19 +1,19 @@
 <div class="container">
 
-  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Array Simple example</h1></u></a>
-  <p>Minimal and simple modal gallery example.</p>
+  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Close Outside example</h1></u></a>
+  <p>Minimal and simple modal gallery example with `Close Outside` behaviour. So you can click on the semi-transparent background to close modal gallery.</p>
   <br>
 
   <h2>Live Demo</h2>
   <br>
-  <modal-gallery [modalImages]="imagesArray"></modal-gallery>
+  <modal-gallery [modalImages]="imagesArray" [enableCloseOutside]="true"></modal-gallery>
   <br><br>
 
   <section>
     <h2>Code</h2>
     <br>
     <pre>
-      &lt;modal-gallery [modalImages]="imagesArray"&gt;&lt;/modal-gallery&gt;
+      &lt;modal-gallery [modalImages]="imagesArray" [enableCloseOutside]="true"&gt;&lt;/modal-gallery&gt;
     </pre>
   </section>
 
@@ -80,9 +80,9 @@
         <tr>
           <td><code>enableCloseOutside</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
+            <div><i>Value: </i><code>true</code></div>
             <div>(<code>false</code> by default)</div>
-            <div>Clicking on the semi-transparent background, modal-gallery won't do nothing</div>
+            <div>Clicking on the semi-transparent background, <span class="text-success">modal-gallery will close</span></div>
           </td>
         </tr>
       </tbody>

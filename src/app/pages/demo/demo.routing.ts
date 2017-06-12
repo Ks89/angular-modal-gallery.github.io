@@ -14,6 +14,9 @@ import { DescriptionCustomComponent } from './description-custom/description-cus
 import { DescriptionFullCustomComponent } from './description-full-custom/description-full-custom.component';
 import { ArrayImagePointerComponent } from './array-image-pointer/array-image-pointer.component';
 import { ObservableImagePointerComponent } from './observable-image-pointer/observable-image-pointer.component';
+import { CloseOusideComponent } from './close-outside/close-outside.component';
+import { ButtonsConfigComponent } from './buttons-config/buttons-config.component';
+import { KeyboardConfigComponent } from './keyboard-config/keyboard-config.component';
 
 export const routes: Routes = [
   { path: '',
@@ -32,7 +35,10 @@ export const routes: Routes = [
       { path: 'description-custom',       component: DescriptionCustomComponent },
       { path: 'description-full-custom',  component: DescriptionFullCustomComponent },
       { path: 'array-pointer',            component: ArrayImagePointerComponent },
-      { path: 'observable-pointer',       component: ObservableImagePointerComponent }
+      { path: 'observable-pointer',       component: ObservableImagePointerComponent },
+      { path: 'close-outside',            component: CloseOusideComponent },
+      { path: 'buttons-config',           component: ButtonsConfigComponent},
+      { path: 'keyboard-config',          component: KeyboardConfigComponent}
     ]
   }
 ];

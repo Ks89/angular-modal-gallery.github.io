@@ -1,20 +1,21 @@
 <div class="container">
 
-  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Array Simple example</h1></u></a>
-  <p>Minimal and simple modal gallery example.</p>
+  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Keyboard Config example</h1></u></a>
+  <p>Minimal and simple modal gallery example with Close Outside</p>
   <br>
 
   <h2>Live Demo</h2>
   <br>
-  <modal-gallery [modalImages]="imagesArray"></modal-gallery>
+  <modal-gallery [modalImages]="imagesArray"
+                 [keyboardConfig]="{esc: 81, left: 40, right: 38}">
+  </modal-gallery>
   <br><br>
 
   <section>
     <h2>Code</h2>
     <br>
-    <pre>
-      &lt;modal-gallery [modalImages]="imagesArray"&gt;&lt;/modal-gallery&gt;
-    </pre>
+    <codemirror [(ngModel)]="codeHtml" [config]="config">
+    </codemirror>
   </section>
 
   <section>
@@ -73,8 +74,16 @@
         <tr>
           <td><code>keyboardConfig</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
-            <div>All keyboard's keys have default values (<kbd>esc</kbd>, <kbd>&rarr;</kbd>, <kbd>&larr;</kbd> )</div>
+            <div><i>Value: </i><code>&#123;esc: 81, left: 40, right: 38&#125;</code></div>
+            <div>
+              <p>This configuration will map actions to other keyboard's keys. So, if you want to change the key to close modal gallery,
+                you can use this property. In this example:</p>
+              <ul>
+                <li><span class="text-success">close gallery: <kbd>q</kbd></span><span class="text-tail"> (instead of the default <kbd>esc</kbd>)</span></li>
+                <li><span class="text-success">previous image: <kbd>&darr;</kbd></span><span class="text-tail"> (instead of the default <kbd>&larr;</kbd>)</span></li>
+                <li><span class="text-success">next image: <kbd>&uarr;</kbd></span><span class="text-tail"> (instead of the default <kbd>&rarr;</kbd>)</span></li>
+              </ul>
+            </div>
           </td>
         </tr>
         <tr>

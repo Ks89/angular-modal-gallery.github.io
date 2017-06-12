@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   Image,
@@ -37,23 +37,14 @@ import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 
 @Component({
-  selector: 'mmw-exturl-simple-page',
-  templateUrl: 'exturl-simple.html',
-  styleUrls: ['exturl-simple.scss']
+  selector: 'mmw-close-outside-page',
+  templateUrl: 'close-outside.html',
+  styleUrls: ['close-outside.scss']
 })
-export class ExtUrlSimpleComponent {
+export class CloseOusideComponent {
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
-  config: any = {lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html'};
-  codeHtml: string;
-
   constructor(private titleService: TitleService) {
-    this.titleService.titleEvent.emit('Demo - External URL simple');
-
-    this.codeHtml =
-      `<modal-gallery [modalImages]="imagesArray"
-               [downloadable]="true"
-               [buttonsConfig]="{extUrl: true}">
-</modal-gallery>`;
+    this.titleService.titleEvent.emit('Demo - Click Outside');
   }
 }

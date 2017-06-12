@@ -12,6 +12,9 @@ import { DescriptionFullCustomComponent } from './description-full-custom/descri
 import { DescriptionCustomComponent } from './description-custom/description-custom.component';
 import { ArrayImagePointerComponent } from './array-image-pointer/array-image-pointer.component';
 import { ObservableImagePointerComponent } from './observable-image-pointer/observable-image-pointer.component';
+import { CloseOusideComponent } from './close-outside/close-outside.component';
+import { ButtonsConfigComponent } from './buttons-config/buttons-config.component';
+import { KeyboardConfigComponent } from './keyboard-config/keyboard-config.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -27,5 +30,8 @@ export const FEATURES_COMPONENTS = [
   DescriptionCustomComponent,
   DescriptionFullCustomComponent,
   ArrayImagePointerComponent,
-  ObservableImagePointerComponent
+  ObservableImagePointerComponent,
+  CloseOusideComponent,
+  ButtonsConfigComponent,
+  KeyboardConfigComponent
 ];

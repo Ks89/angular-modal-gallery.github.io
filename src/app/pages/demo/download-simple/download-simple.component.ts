@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   Image,
@@ -44,7 +44,16 @@ import { TitleService } from '../../../core/services/title.service';
 export class DownloadSimpleComponent {
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
+  config: any = {lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html'};
+  codeHtml: string;
+
   constructor(private titleService: TitleService) {
     this.titleService.titleEvent.emit('Demo - Download simple');
+
+    this.codeHtml =
+      `<modal-gallery [modalImages]="imagesArray"
+               [downloadable]="true"
+               [buttonsConfig]="{download: true}">
+</modal-gallery>`;
   }
 }
