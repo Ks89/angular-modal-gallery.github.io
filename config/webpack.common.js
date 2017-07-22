@@ -153,7 +153,19 @@ module.exports = {
       title: TITLE,
       inject: true,
       baseHref: properties.GITHUB ? `${properties.GITHUB_PATH}/` : '/',
-      // chunksSortMode: 'auto', // auto is the default value
+      // chunksSortMode: 'auto', // auto is the default value --> Broken with webpack 3, so I must specify the right order manually
+      chunksSortMode: function (chunk1, chunk2) {
+        let orders = ['polyfills', 'vendor', 'app'];
+        let order1 = orders.indexOf(chunk1.names[0]);
+        let order2 = orders.indexOf(chunk2.names[0]);
+        if (order1 > order2) {
+          return 1;
+        } else if (order1 < order2) {
+          return -1;
+        } else {
+          return 0;
+        }
+      },
       chunks: ['polyfills', 'vendor', 'app'],
       template: TEMPLATE_PATH,
       filename: TEMPLATE_HTML

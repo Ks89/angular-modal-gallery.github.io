@@ -24,7 +24,7 @@
 
 const webpack                 = require('webpack');
 const DefinePlugin            = require('webpack/lib/DefinePlugin');
-const UglifyJsPlugin          = require('webpack/lib/optimize/UglifyJsPlugin');
+const UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
 
 const WebpackMd5HashPlugin    = require('webpack-md5-hash');
 const CompressionPlugin       = require('compression-webpack-plugin');
@@ -96,25 +96,25 @@ module.exports = webpackMerge(commonConfig, {
     new CompressionPlugin({regExp: /\.css$|\.html$|\.js$|\.map$/}),
     new UglifyJsPlugin({
       beautify: false,
-      mangle: {
-        screw_ie8 : true
-      },
-      output: {
-        comments: false
-      },
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
-        negate_iife: false // we need this for lazy v8
-      }
+      // mangle: {
+      //   screw_ie8 : true
+      // },
+      // output: {
+      //   comments: false
+      // },
+      // compress: {
+      //   screw_ie8: true,
+      //   warnings: false,
+      //   conditionals: true,
+      //   unused: true,
+      //   comparisons: true,
+      //   sequences: true,
+      //   dead_code: true,
+      //   evaluate: true,
+      //   if_return: true,
+      //   join_vars: true,
+      //   negate_iife: false // we need this for lazy v8
+      // }
     }),
     new LoaderOptionsPlugin({
       minimize: true,
