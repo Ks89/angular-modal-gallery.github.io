@@ -82,9 +82,6 @@
             <div>
               <small><code>buttonsConfig</code></small>
             </div>
-            <div>
-              <span class="badge badge-success pull-left">NEW</span>
-            </div>
           </td>
           <td>
             <div>
@@ -99,9 +96,6 @@
           <td>
             <div>
               <small><code>keyboardConfig</code></small>
-            </div>
-            <div>
-              <span class="badge badge-success pull-left">NEW</span>
             </div>
           </td>
           <td>
@@ -118,16 +112,31 @@
             <div>
               <small><code>enableClose Outside</code></small>
             </div>
-            <div>
-              <span class="badge badge-success pull-left">NEW</span>
-            </div>
           </td>
           <td>
             <div>
               <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
             </div>
             <div>
-              <p>If true, you can click on the semi-transparent background of modal images to close it. <code>enableCloseOutside=false</code> by default</p>
+              <p>If true, you can click on the semi-transparent background of modal images to close it. <code>enableCloseOutside=false</code> by default.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <small><code>slideConfig</code></small>
+            </div>
+            <div>
+              <span class="badge badge-success pull-left">NEW</span>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#SlideConfig">SlideConfig</a></code><span class="badge badge-default pull-right">optional</span>
+            </div>
+            <div>
+              <p>If this objects contains 'infinite: true', you won't be able to navigate before both the first and after the last images.</p>
             </div>
           </td>
         </tr>
@@ -492,6 +501,27 @@
         </div>
         <div>
           <p>Javascript keycode to use instead of the default <kbd>&larr;</kbd></p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <a id="SlideConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">SlideConfig</h1></u></a>
+  <p>Interface to customize sliding behaviour.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><code>infinite</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code><span class="badge badge-default pull-right">optional</span>
+        </div>
+        <div>
+          <p>If false, infinite sliding will be disabled, otherwise not</p>
         </div>
       </td>
     </tr>

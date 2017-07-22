@@ -1,24 +1,21 @@
 <div class="container">
 
-  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Download Advanced example</h1></u></a>
-  <p>Minimal modal gallery example with <b class="text-success">downloadable images ONLY with ctrl+s/cmd+s.</b></p>
+  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">No infinite sliding example</h1></u></a>
+  <p>Minimal and simple modal gallery example with <b>infinite sliding disabled</b></p>
   <br>
 
   <h2>Live Demo</h2>
   <br>
   <modal-gallery [modalImages]="imagesArray"
-                 [downloadable]="true">
+                 [slideConfig]="{infinite: false}">
   </modal-gallery>
   <br><br>
 
   <section>
     <h2>Code</h2>
     <br>
-    <pre>
-      &lt;modal-gallery [modalImages]="imagesArray"
-                     [downloadable]="true"&gt;
-      &lt;/modal-gallery&gt;
-    </pre>
+    <codemirror [(ngModel)]="codeHtml" [config]="config">
+    </codemirror>
   </section>
 
   <section>
@@ -36,7 +33,7 @@
         <td><code>modalImages</code></td>
         <td>
           <div><i>Value: </i><code>Image[]</code></div>
-          <div>Array of <code>Image</code> objects</div>
+          <div><b class="text-success">Array of <code>Image</code> objects</b></div>
         </td>
       </tr>
       <tr>
@@ -46,6 +43,7 @@
           <div>It will display the entire gallery</div>
         </td>
       </tr>
+      <tr>
       <tr>
         <td><code>downloadable</code></td>
         <td>
@@ -61,21 +59,14 @@
         </td>
       </tr>
       <tr>
-        <td><code>showDownloadButton</code></td>
-        <td>
-          <div><i>Value: </i><code>false</code></div>
-          <div><b class="text-success">Download button is</b> <b class="text-danger">hidden</b></div>
-        </td>
-      </tr>
-      <tr>
         <td><code>buttonsConfig</code></td>
         <td>
-          <div><i>Value: </i><code>undefined</code></div>
+          <div><i>Value: </i><code>&#123;download: true, extUrl: true, close: false&#125;</code></div>
           <div>
             <ul>
-              <li><i class="fa fa-download"></i> is <span class="text-danger">hidden</span></li>
-              <li><i class="fa fa-external-link"></i> is <span class="text-danger">hidden</span></li>
-              <li><i class="fa fa-close"></i> is <span class="text-success">visible</span> by default</li>
+              <li><i class="fa fa-download"></i> is <span class="text-success">visible</span></li>
+              <li><i class="fa fa-external-link"></i> is <span class="text-success">visible</span></li>
+              <li><i class="fa fa-close"></i> is <span class="text-danger">hidden</span></li>
             </ul>
           </div>
         </td>
@@ -98,8 +89,8 @@
       <tr>
         <td><code>slideConfig</code></td>
         <td>
-          <div><i>Value: </i><code>undefined</code></div>
-          <div>Infinite sliding is enabled by default, so you will be able to navigate between images without restrictions</div>
+          <div><i>Value: </i><code>&#123;infinite: false&#125;</code></div>
+          <div><b class="text-success">Infinite sliding is disabled</b>, so you will be able to navigate between images only without exceeding the boundaries</div>
         </td>
       </tr>
       </tbody>

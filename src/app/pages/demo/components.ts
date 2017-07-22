@@ -15,6 +15,7 @@ import { ObservableImagePointerComponent } from './observable-image-pointer/obse
 import { CloseOusideComponent } from './close-outside/close-outside.component';
 import { ButtonsConfigComponent } from './buttons-config/buttons-config.component';
 import { KeyboardConfigComponent } from './keyboard-config/keyboard-config.component';
+import { NoInfiniteSlidingComponent } from './no-infinite-sliding/no-infinite-sliding.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -33,5 +34,6 @@ export const FEATURES_COMPONENTS = [
   ObservableImagePointerComponent,
   CloseOusideComponent,
   ButtonsConfigComponent,
-  KeyboardConfigComponent
+  KeyboardConfigComponent,
+  NoInfiniteSlidingComponent
 ];

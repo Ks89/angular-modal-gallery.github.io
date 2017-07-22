@@ -17,6 +17,7 @@ import { ObservableImagePointerComponent } from './observable-image-pointer/obse
 import { CloseOusideComponent } from './close-outside/close-outside.component';
 import { ButtonsConfigComponent } from './buttons-config/buttons-config.component';
 import { KeyboardConfigComponent } from './keyboard-config/keyboard-config.component';
+import { NoInfiniteSlidingComponent } from './no-infinite-sliding/no-infinite-sliding.component';
 
 export const routes: Routes = [
   { path: '',
@@ -38,7 +39,8 @@ export const routes: Routes = [
       { path: 'observable-pointer',       component: ObservableImagePointerComponent },
       { path: 'close-outside',            component: CloseOusideComponent },
       { path: 'buttons-config',           component: ButtonsConfigComponent},
-      { path: 'keyboard-config',          component: KeyboardConfigComponent}
+      { path: 'keyboard-config',          component: KeyboardConfigComponent},
+      { path: 'no-infinite-sliding',      component: NoInfiniteSlidingComponent}
     ]
   }
 ];
