@@ -23,54 +23,15 @@
  */
 
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
-
-const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../../..' : webpack.IMAGE_PATH_PREFIX;
+import { TitleService } from '../../../core/services/title.service';
 
 @Component({
   selector: 'mmw-gallery-array-page',
   templateUrl: 'modal-gallery.html',
   styleUrls: ['modal-gallery.scss']
 })
-export class GalleryArrayComponent {
-
-  imagesArray: Array<Image> = [
-    new Image(
-      `${PATH}/assets/images/gallery/img1.jpg`,
-      null, // no thumb
-      null, // no description
-      'http://www.google.com'
-    ),
-    new Image(
-      `${PATH}/assets/images/gallery/img2.png`, // example with a PNG image
-      null, // no thumb
-      'Description 2',
-      null // url
-    ),
-    new Image(
-      `${PATH}/assets/images/gallery/img3.jpg`,
-      `${PATH}/assets/images/gallery/thumbs/img3.png`, // example with a PNG thumb image
-      'Description 3',
-      'http://www.google.com'
-    ),
-    new Image(
-      `${PATH}/assets/images/gallery/img4.jpg`,
-      null, // no thumb
-      'Description 4',
-      'http://www.google.com'
-    ),
-    new Image(
-      `${PATH}/assets/images/gallery/img5.jpg`,
-      `${PATH}/assets/images/gallery/thumbs/img5.jpg`,
-      null, // no description
-      null // url
-    )
-  ];
-
-  constructor(private route: ActivatedRoute) {
+export class ModalGalleryComponent {
+  constructor(private titleService: TitleService) {
+    this.titleService.titleEvent.emit('Features - ModalGallery');
   }
-
-
 }

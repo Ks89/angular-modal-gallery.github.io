@@ -22,26 +22,19 @@
  * SOFTWARE.
  */
 
-import { Component } from '@angular/core';
-import { TitleService } from '../../core/services/title.service';
+.title {
+  background-color: #3c763d;
+  background: linear-gradient(135deg, #3c763d, #7de87d);
+  margin-top: 32px;
+  color: white;
 
-@Component({
-  selector: 'mmw-features-page',
-  templateUrl: 'features.html',
-  styleUrls: ['features.scss']
-})
-export class FeaturesComponent {
-
-  title: string = 'Features - Modal Gallery';
-
-  constructor(private titleService: TitleService) {
-    this.titleService.titleEvent.subscribe((val: string) => {
-      this.onUpdateTitle(val);
-    });
+  h1 {
+    color: white;
   }
+}
 
-  onUpdateTitle(event: string) {
-    this.title = event;
-  }
-
+.text-shadow {
+  text-shadow: -4px 0 #fff, -3px 0 #fff, -2px 0 #fff, -1px 0 #fff, 0 0 #fff, 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, 4px 0 #fff;
+  //box-shadow: 0 1px #fff, 0 3px #0275d8;
+  //display: table;
 }

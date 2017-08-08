@@ -1,0 +1,50 @@
+<div class="container">
+
+  <!-- Add dark green hover effect on text -->
+  <a id="GlobalConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">Global configuration</h1></u></a>
+  <p>If you want to customize a particular behaviour of this library for the entire application (GLOBAL CONFIGURATION), you can pass an object to the <code>forRoot()</code> method in your root module.</p>
+  <p>Attention: you can only add a behaviour to this library across your entire application.</p>
+  <br>
+
+  <section>
+    <h3>How to use it?</h3>
+    <p>Into your root module, pass an object of type <a
+      pageScroll href="#KeyboardServiceConfig">KeyboardServiceConfig</a> to the <code>forRoot()</code> method.</p>
+    <p>For example, to download images also with ctrl+a use this:</p>
+    <br>
+    <pre>
+  @NgModule(&#123;
+    declarations: [AppComponent],
+    imports: [
+      BrowserModule,
+      ModalGalleryModule.forRoot( <b>&#123; shortcuts: ['ctrl+a', 'ctrl+s', 'meta+s'] &#125;</b> )
+    ],
+    bootstrap: [AppComponent],
+  &#125;)
+  export class AppModule &#123;&#125;
+        </pre>
+  </section>
+
+  <br>
+
+  <a id="KeyboardServiceConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/src"><u class="text-success"><h1 class="text-success">KeyboardServiceConfig</h1></u></a>
+  <p>Interface to change global download shortcuts.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><code>shortcuts</code></td>
+      <td>
+        <div>
+          <i>Type: </i><code>Array&lt;string&gt; | string</code>
+        </div>
+        <div>
+          <p>This is a direct input into KeyboardService (<code>mousetrap.bind(HERE, ...)</code>) to manage keyboard's shortcuts.
+            Please refer to the official documentation of mousetrap <a href="https://craig.is/killing/mice">HERE</a>. By default this value is <code>['ctrl+s','meta+s']</code>.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

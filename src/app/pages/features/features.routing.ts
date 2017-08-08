@@ -1,14 +1,16 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { GalleryArrayComponent } from "./modal-gallery/modal-gallery.component";
-import { FeaturesComponent } from "./features.component";
+import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
+import { FeaturesComponent } from './features.component';
+import { GlobalConfigComponent } from './global-config/global-config.component';
 
 export const routes: Routes = [
   { path: '',
     component: FeaturesComponent,
     children: [
-      { path: '',                       component: GalleryArrayComponent },
-      { path: 'modalGallery',           component: GalleryArrayComponent }
+      { path: '',                       component: ModalGalleryComponent },
+      { path: 'modalGallery',           component: ModalGalleryComponent },
+      { path: 'globalConfig',           component: GlobalConfigComponent }
     ]
   }
 ];

@@ -23,25 +23,15 @@
  */
 
 import { Component } from '@angular/core';
-import { TitleService } from '../../core/services/title.service';
+import { TitleService } from '../../../core/services/title.service';
 
 @Component({
-  selector: 'mmw-features-page',
-  templateUrl: 'features.html',
-  styleUrls: ['features.scss']
+  selector: 'mmw-global-config-page',
+  templateUrl: 'global-config.html',
+  styleUrls: ['global-config.scss']
 })
-export class FeaturesComponent {
-
-  title: string = 'Features - Modal Gallery';
-
+export class GlobalConfigComponent {
   constructor(private titleService: TitleService) {
-    this.titleService.titleEvent.subscribe((val: string) => {
-      this.onUpdateTitle(val);
-    });
+    this.titleService.titleEvent.emit('Features - Global configuration');
   }
-
-  onUpdateTitle(event: string) {
-    this.title = event;
-  }
-
 }
