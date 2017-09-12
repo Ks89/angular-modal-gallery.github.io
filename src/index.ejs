@@ -7,6 +7,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+        <!-- Workaround to host a SPA on Github Pages. Taken from
+            http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
+        <!-- ---------------------------------------------- -->
+        <!-- Mandatory to release this app on Github pages without issues -->
+        <script>
+          (function(){
+            var redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            if (redirect && redirect != location.href) {
+              history.replaceState(null, null, redirect);
+            }
+          })();
+        </script>
+        <!-- ---------------------------------------------- -->
+
         <% if (webpackConfig.htmlElements.headTags) { %>
         <!-- Configured Head Tags  -->
         <%= webpackConfig.htmlElements.headTags %>

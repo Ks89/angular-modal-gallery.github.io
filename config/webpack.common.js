@@ -213,6 +213,17 @@ module.exports = {
       {
         from: 'node_modules/codemirror/lib/codemirror.css',
         to: 'assets/codemirror/lib/codemirror.css',
+      },
+
+      // Workaround for Github Pages
+      // 404 file is a file that I wrote using this
+      // tutorial http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+      // This script is a way to copy this file to the main folder to release.
+      // 404.html must be into the root of gh-pages branch of thi repo
+      // TODO I should find a way to replace the URL hardcoded into 404.html with a dynamic URL that I can pass from outside
+      {
+        from: 'gh-pages-workaround/404.html',
+        to: '404.html',
       }
     ]),
     new ContextReplacementPlugin(
