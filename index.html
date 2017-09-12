@@ -7,7 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        
+        <!-- Workaround to host a SPA on Github Pages. Taken from http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
+		<script>
+		  (function(){
+		    var redirect = sessionStorage.redirect;
+		    delete sessionStorage.redirect;
+		    if (redirect && redirect != location.href) {
+		      history.replaceState(null, null, redirect);
+		    }
+		  })();
+		</script>
+		        
         <!-- Configured Head Tags  -->
         <link rel="stylesheet" href="/angular-modal-gallery.github.io/assets/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/angular-modal-gallery.github.io/assets/codemirror/lib/codemirror.css">
