@@ -1,29 +1,26 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false"
-          aria-label="Toggle navigation">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a pageScroll href="#home" class="navbar-brand" [routerLink]="['/']">angular-modal-gallery</a>
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <a pageScroll class="navbar-brand" [routerLink]="['/']" href="#home">angular-modal-gallery</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item {{isNavItemActive('/gettingStarted')}}">
+        <a pageScroll href="#gettingStarted" class="nav-link" [routerLink]="['/gettingStarted']">Getting started</a>
+      </li>
 
-  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a pageScroll href="#gettingStarted" class="nav-link" [ngClass]="isNavItemActive('/gettingStarted')" [routerLink]="['/gettingStarted']">Getting
-          started <span class="sr-only">(current)</span></a>
+      <li class="nav-item {{isNavItemActive('/features')}}">
+        <a pageScroll href="#features" class="nav-link" [routerLink]="['/features']">Features</a>
       </li>
-      <li class="nav-item">
-        <a pageScroll href="#features" class="nav-link" [ngClass]="isNavItemActive('/features')" [routerLink]="['/features']">Features</a>
+      <li class="nav-item {{isNavItemActive('/migration')}}">
+        <a pageScroll href="#migration" class="nav-link" [routerLink]="['/migration']">Migration guide</a>
       </li>
-      <li class="nav-item">
-        <a pageScroll href="#migration" class="nav-link" [ngClass]="isNavItemActive('/migration')" [routerLink]="['/migration']">Migration guide</a>
-      </li>
-      <li class="nav-item">
-        <a pageScroll href="#demo" class="nav-link" [ngClass]="isNavItemActive('/demo')" [routerLink]="['/demo']">Demo</a>
+      <li class="nav-item {{isNavItemActive('/demo')}}">
+        <a pageScroll href="#demo" class="nav-link" [routerLink]="['/demo']">Demo</a>
       </li>
     </ul>
 
-    <span class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0">
       <!-- Built with https://buttons.github.io -->
       <iframe class="mr-sm-2" allowtransparency="true" scrolling="no" frameborder="0"
               style="width: 160px; height: 28px; border: none;"
@@ -37,6 +34,6 @@
       <iframe class="mr-sm-2" allowtransparency="true" scrolling="no" frameborder="0"
               style="width: 108px; height: 28px; border: none;"
               src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2FKs89%2Fangular-modal-gallery%2Fsubscription&data-text=Watch&data-size=large&data-show-count=true&aria-label=Watch%20Ks89%2Fangular-modal-gallery%20on%20GitHub"></iframe>
-    </span>
+    </form>
   </div>
 </nav>

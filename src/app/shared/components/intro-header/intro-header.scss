@@ -36,6 +36,11 @@ $my-green: #7de87d;
   }
 }
 
+.btn {
+  color: white !important;
+  border-color: white !important;
+}
+
 .btn:hover {
   background: white;
   color: $my-dark-green !important;

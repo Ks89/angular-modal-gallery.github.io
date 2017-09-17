@@ -30,8 +30,7 @@ import { Router } from '@angular/router';
   templateUrl: 'navbar.html'
 })
 export class NavbarComponent {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   isNavItemActive(location: string) {
     return this.router.url.includes(location) ? 'active' : '';
