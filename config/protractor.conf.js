@@ -32,8 +32,15 @@ var helpers = require('./helpers');
 exports.config = {
   baseUrl: 'http://localhost:3000',
 
-  // use `npm run e2e`
   specs: [
+    // /**
+    //  * add jasmine-expect before tests
+    //  * https://github.com/JamieMason/Jasmine-Matchers)
+    //  */
+    // 'node_modules/jasmine-expect/index.js',
+    /**
+     * My e2e tests
+     */
     helpers.root('src/**/**.e2e.ts'),
     helpers.root('src/**/*.e2e.ts')
   ],
@@ -55,6 +62,7 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
+      // args: ["--headless", "--disable-gpu", "--window-size=800,600"]
       'args': ['show-fps-counter=true']
     }
   },

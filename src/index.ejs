@@ -27,16 +27,8 @@
         <%= webpackConfig.htmlElements.headTags %>
         <% } %>
 
-        <style>
-            .progress-loading {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-        </style>
-
-        <!-- Third-party css/scss imports are both in src/app/app.module and src/styles/ -->
+        <!-- Third-party CSS/SCSS imports are both in src/app/app.module and src/styles/ -->
+        <!-- CSS/SCSS will be added here by Webpack -->
 
         <base href="<%= htmlWebpackPlugin.options.baseHref %>">
     </head>
@@ -44,10 +36,11 @@
         <br>
         <!-- Include application here -->
         <mmw-application>
-            <img src="assets/ring.svg" class="progress-loading"></div>
+            <img style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto;" src="/assets/ring.svg"/>
         </mmw-application>
 
-        <!-- Libraries will be included here automatically by Webpack-->
+        <!-- Scripts will be added here by Webpack-->
+        <%= htmlWebpackPlugin.files.webpackManifest %>
 
     </body>
 </html>

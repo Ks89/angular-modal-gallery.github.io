@@ -23,11 +23,13 @@
  */
 
 const webpack                      = require('webpack');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ProvidePlugin                = require('webpack/lib/ProvidePlugin');
 const CommonsChunkPlugin           = require('webpack/lib/optimize/CommonsChunkPlugin');
 const LoaderOptionsPlugin          = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin     = require('webpack/lib/ContextReplacementPlugin');
 const NamedModulesPlugin           = require('webpack/lib/NamedModulesPlugin');
+const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 
 const CopyWebpackPlugin            = require('copy-webpack-plugin');
 const HtmlWebpackPlugin            = require('html-webpack-plugin');
@@ -36,19 +38,21 @@ const ngcWebpack                   = require('ngc-webpack');
 const ScriptExtHtmlWebpackPlugin   = require('script-ext-html-webpack-plugin');
 const BundleAnalyzerPlugin         = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const VisualizerPlugin             = require('webpack-visualizer-plugin');
+const InlineManifestWebpackPlugin  = require('inline-manifest-webpack-plugin');
 
 // I'm using a plugin from npmjs.com based on the original html-elements-plugin/index.js by AngularClass
 // to prevent an issue on travis-ci.
 const HtmlElementsPlugin           = require('html-elements-webpack-plugin');
 
 const helpers                      = require('./helpers');
-const properties                  = require('./properties');
+const properties                   = require('./properties');
 
 const TITLE                        = 'angular-modal-gallery';
 const TEMPLATE_PATH                = './src/index.ejs';
 const TEMPLATE_HTML                = 'index.html';
 
 const AOT                          = helpers.hasNpmFlag('aot');
+const PROD                         = helpers.hasNpmFlag('prod');
 const TS_CONFIG                    = AOT ? 'tsconfig-aot.json' : 'tsconfig.json';
 
 module.exports = {
@@ -83,7 +87,15 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: '${TS_CONFIG}'
+              configFileName: '${TS_CONFIG}',
+              useCache: !AOT && !PROD
+            }
+          },
+          {
+            loader: 'ngc-webpack',
+            options: {
+              // to create smaller aot builds
+              disable: !AOT,
             }
           },
           {
@@ -91,10 +103,6 @@ module.exports = {
           }
         ],
         exclude: [/\.(spec|e2e)\.ts$/]
-      },
-      {
-        test: /\.json$/,
-        use: 'json-loader'
       },
       {
         test: /\.css$/,
@@ -135,6 +143,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new ModuleConcatenationPlugin(),
     new NamedModulesPlugin(),
     new CommonsChunkPlugin({
       name: 'polyfills',
@@ -149,23 +158,15 @@ module.exports = {
     new CommonsChunkPlugin({
       name: ['polyfills', 'vendor'].reverse()
     }),
+    new CommonsChunkPlugin({
+      name: ['manifest'],
+      minChunks: Infinity,
+    }),
     new HtmlWebpackPlugin({
       title: TITLE,
-      inject: true,
+      inject: 'body', //true or 'head'
       baseHref: properties.GITHUB ? `${properties.GITHUB_PATH}/` : '/',
-      // chunksSortMode: 'auto', // auto is the default value --> Broken with webpack 3, so I must specify the right order manually
-      chunksSortMode: function (chunk1, chunk2) {
-        let orders = ['polyfills', 'vendor', 'app'];
-        let order1 = orders.indexOf(chunk1.names[0]);
-        let order2 = orders.indexOf(chunk2.names[0]);
-        if (order1 > order2) {
-          return 1;
-        } else if (order1 < order2) {
-          return -1;
-        } else {
-          return 0;
-        }
-      },
+      chunksSortMode: 'dependency',
       chunks: ['polyfills', 'vendor', 'app'],
       template: TEMPLATE_PATH,
       filename: TEMPLATE_HTML
@@ -228,9 +229,18 @@ module.exports = {
     ]),
     new ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      /angular(\\|\/)core(\\|\/)@angular/,
       helpers.root('./src') // location of your src
     ),
+
+    /**
+     * Plugin: InlineManifestWebpackPlugin
+     * Inline Webpack's manifest.js in index.html
+     *
+     * https://github.com/szrenwei/inline-manifest-webpack-plugin
+     */
+    new InlineManifestWebpackPlugin(),
+
     new ngcWebpack.NgcWebpackPlugin({
       disabled: !AOT,
       tsConfig: helpers.root('tsconfig-aot.json')
@@ -239,6 +249,7 @@ module.exports = {
       jQuery: 'jquery',
       jquery: 'jquery',
       $: 'jquery',
+      // 'Popper': 'popper.js',
       'Tether': 'tether',
       'window.Tether': 'tether',
       //---------------------------------------------------

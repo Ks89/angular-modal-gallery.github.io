@@ -26,7 +26,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { ROUTES }  from './app.routing';
+import { ROUTES } from './app.routing';
 
 // Third party opensource libraries (that are using scss/css)
 import 'bootstrap-loader';
