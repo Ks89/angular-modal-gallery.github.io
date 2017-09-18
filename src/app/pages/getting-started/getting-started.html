@@ -9,19 +9,19 @@
     <div class="col-12 col-md-9 pull-md-3">
 
       <h3>Dependencies</h3>
-      <p>The only required dependencies are:</p>
+      <p>The most important required dependencies are:</p>
       <ul>
-        <li>Angular (requires Angular version 2 or higher, tested with 4.2.3)</li>
+        <li>Angular (requires Angular version 2 or higher, tested with 4.4.1)</li>
         <li>Rxjs 5.0.0 or higher</li>
-        <li>font-awesome (tested with font-awesome 4.7.0)</li>
-        <li>hammerjs</li>
-        <li>mousetrap</li>
+        <li>font-awesome (tested with font-awesome 4.7.0) [<code>npm i --save font-awesome</code>]</li>
       </ul>
+      <p>After installing the above dependencies, add both <code>hammerjs</code>, <code>mousetrap</code> and <code>angular-modal-gallery</code> running this command:</p>
+      <p><code>npm i --save angular-modal-gallery hammerjs mousetrap</code></p>
+      <p>Finally add also some additional @types running:</p>
+      <p><code>npm i --save-dev @types/hammerjs @types/mousetrap</code></p>
 
       <h3>Installation</h3>
-      <p>After installing the above dependencies, add <code>angular-modal-gallery</code> running this command:</p>
-      <p><code>npm install --save angular-modal-gallery</code></p>
-      <p>Once finished you need to import the main module and both hammerjs and mousetrap.</p>
+      <p>Once finished to install dependencies, you need to import the main module and both <code>hammerjs</code> and <code>mousetrap</code>.</p>
       <pre>
         import 'hammerjs';
         import 'mousetrap';
@@ -40,7 +40,7 @@
         &#125;)
         export class AppModule &#123;&#125;
       </pre>
-      <p>Other modules in your application can simply import ModalGalleryModule (without <code>.forRoot()</code>):</p>
+      <p>Other modules in your application can simply import <code>ModalGalleryModule</code> (without <code>.forRoot()</code>):</p>
       <pre>
         import &#123;ModalGalleryModule&#125; from 'angular-modal-gallery';
 
@@ -51,8 +51,8 @@
         export class OtherModule &#123;&#125;
       </pre>
 
-      <h4>Webpack 2</h4>
-      <p>If you are using Webpack 2, you should see to the <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/demo">official demo</a>. Also, remember that this entire website is made with Webpack2. So, <b class="text-danger">I really recommend Webpack 2 if you want to use this library.</b></p>
+      <h4>Webpack 3</h4>
+      <p>If you are using Webpack 3, you should see to the <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/demo">official demo</a>. Also, remember that this entire website is made with Webpack 3. So, <b class="text-danger">I really recommend Webpack 3 if you want to use this library.</b></p>
 
       <h4>Angular-cli</h4>
       <p>If you are using Angular-cli, you should see to the <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/demo">official demo</a>.</p>
