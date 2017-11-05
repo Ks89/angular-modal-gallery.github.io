@@ -8,6 +8,27 @@
   <div class="row">
     <div class="col-12 col-md-9 pull-md-3">
 
+      <h3>4.0.0 is out with the official support for Angular 5</h3>
+      <br><hr>
+      <p>There is only a breaking change for SystemJs users. In your systemjs.config.js replace this:</p>
+      <pre>
+        let map = &#123;
+          ...
+          'angular-modal-gallery'     : 'node_modules/angular-modal-gallery/dist/bundles',
+          ...
+        &#125;;
+      </pre>
+            <p>with with:</p>
+      <pre>
+        let map = &#123;
+          ...
+          'angular-modal-gallery'     : 'node_modules/angular-modal-gallery/bundles',
+          ...
+        &#125;;
+      </pre>
+
+      <br><br>
+
       <h3>3.0.0 is out! And it's really big</h3>
       <br><hr>
       <p>I know, <b>major releases with breaking changes are a pain in the ass, but I had to do this thing to be able to improve this library in upcoming versions.</b></p>
