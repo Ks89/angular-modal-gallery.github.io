@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "index": "/angular-modal-gallery.github.io/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/angular-modal-gallery.github.io/index.html",
+        "/angular-modal-gallery.github.io/0.4e47c2714aca0b49f246.chunk.js",
+        "/angular-modal-gallery.github.io/1.95397e8444056c1244bd.chunk.js",
+        "/angular-modal-gallery.github.io/inline.ae51bbe01afbe7d5a24a.bundle.js",
+        "/angular-modal-gallery.github.io/main.5995c520191158b5ff14.bundle.js",
+        "/angular-modal-gallery.github.io/polyfills.db9fb7642ed3ee0404e0.bundle.js",
+        "/angular-modal-gallery.github.io/scripts.a79a89b6252e77aef07c.bundle.js",
+        "/angular-modal-gallery.github.io/styles.89566f1805fa7b5af035.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/angular-modal-gallery.github.io/assets/favicon.png",
+        "/angular-modal-gallery.github.io/assets/icon_site.png",
+        "/angular-modal-gallery.github.io/assets/ring.svg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/img1.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/img2.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/img2.png",
+        "/angular-modal-gallery.github.io/assets/images/gallery/img3.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/img4.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/img5.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img1.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img2.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img3.png",
+        "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img4.jpg",
+        "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img5.jpg"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "from-api",
+      "patterns": [
+        "\\/angular-modal-gallery\\.github\\.io\\/api\\.github\\.com\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 15,
+      "maxAge": 3600000,
+      "timeoutMs": 5000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/angular-modal-gallery.github.io/0.4e47c2714aca0b49f246.chunk.js": "7e9577b2c41603ca9e2ea158a950614d46f12792",
+    "/angular-modal-gallery.github.io/assets/favicon.png": "47fea6dad91181797661c1023647b76d9eee2bc4",
+    "/angular-modal-gallery.github.io/1.95397e8444056c1244bd.chunk.js": "3021c786d8939faa005dcc67309f06e58be04b56",
+    "/angular-modal-gallery.github.io/assets/icon_site.png": "47fea6dad91181797661c1023647b76d9eee2bc4",
+    "/angular-modal-gallery.github.io/inline.ae51bbe01afbe7d5a24a.bundle.js": "e6d0a8df94df7aab393ba4df482ae254b1bb5bc2",
+    "/angular-modal-gallery.github.io/assets/ring.svg": "3abc97b11fadc6da5f4a2fa4b31d75c5e39ae81c",
+    "/angular-modal-gallery.github.io/main.5995c520191158b5ff14.bundle.js": "6fb0546e11cc9129b210fa27df7369e70a5c92e6",
+    "/angular-modal-gallery.github.io/assets/images/gallery/img1.jpg": "1eb34798440577e115cc76fdb6b5d6bd61acadd7",
+    "/angular-modal-gallery.github.io/polyfills.db9fb7642ed3ee0404e0.bundle.js": "988ca1615038a82d57f79b67f4b4e4d71ad55899",
+    "/angular-modal-gallery.github.io/assets/images/gallery/img2.jpg": "10b2e7e106308231706ebffb260ea3f90c515941",
+    "/angular-modal-gallery.github.io/scripts.a79a89b6252e77aef07c.bundle.js": "83148b298489e8da50ba97b25686eed63b290c24",
+    "/angular-modal-gallery.github.io/assets/images/gallery/img2.png": "c8f71e1fffea88c629d254ac89baccf1f3defd71",
+    "/angular-modal-gallery.github.io/styles.89566f1805fa7b5af035.bundle.css": "a50034f149f5999a62937e3c827e0f476eebfa7e",
+    "/angular-modal-gallery.github.io/assets/images/gallery/img3.jpg": "bd9e22b77a613e714ba2c462b469aed1ef89df27",
+    "/angular-modal-gallery.github.io/index.html": "03075dc7c055b531ff5889065478ce732a4ce845",
+    "/angular-modal-gallery.github.io/assets/images/gallery/img4.jpg": "ad5ac6dc13137f706a963cb80c92c184102b9cd7",
+    "/angular-modal-gallery.github.io/assets/images/gallery/img5.jpg": "e4fa2cfcf79050bb1c84a10a8cd0dbfbe20f3093",
+    "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img1.jpg": "9d55ae6685cef76377a612f33b9193bca1ee2685",
+    "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img2.jpg": "96738de0b4bdc715c976a895874a415ee894d574",
+    "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img3.png": "eee9d41a4543023ea4ba685a2a61ad0c0f171d4b",
+    "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img4.jpg": "780db186d88ee492737fd794b9f5307092bb9d34",
+    "/angular-modal-gallery.github.io/assets/images/gallery/thumbs/img5.jpg": "971c2acf87c3f7cbde6e6e80e520ddb5dbc4c9b5"
+  }
+}
