@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,17 +29,13 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
+import { Action, Image, ImageModalEvent } from 'angular-modal-gallery';
 
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
+import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
 
 @Component({
   selector: 'mmw-observable-image-pointer-page',
@@ -55,7 +51,9 @@ export class ObservableImagePointerComponent implements OnDestroy {
 
   private subscription: Subscription;
 
-  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  configHtml: any = codemirrorHtml;
+  configTs: any = codemirrorTs;
+
   codeHtml: string =
     `<div *ngFor="let img of images | async; let i = index">
     <div class="float-left" *ngIf="i <= 2">
@@ -71,7 +69,7 @@ export class ObservableImagePointerComponent implements OnDestroy {
                    (close)="onCloseImageModal($event)"></modal-gallery>
   </div>`;
   codeTypescript: string =
-   `
+    `
     images: Observable<Array<Image>>; // init this value with your images
     openModalWindowObservable: boolean = false;
     imagePointerObservable: number = 0;

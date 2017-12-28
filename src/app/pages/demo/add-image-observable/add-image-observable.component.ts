@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,24 +22,20 @@
  * SOFTWARE.
  */
 
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
+import { Image } from 'angular-modal-gallery';
 
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
+import { codemirrorTs } from '../../codemirror.config';
 
 @Component({
   selector: 'mmw-add-image-observable-page',
@@ -50,7 +46,8 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
 
   imagesArraySubscribed: Array<Image>;
 
-  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  configTs: any = codemirrorTs;
+
   codeTypescript: string;
 
   private originalArrayLength: number = IMAGES_ARRAY.length;
@@ -94,11 +91,11 @@ export class AddImageObservableComponent implements OnInit, OnDestroy {
     this.subscription = Observable.of(_.cloneDeep(IMAGES_ARRAY)).delay(500)
       .subscribe((val: Array<Image>) => {
         this.imagesArraySubscribed = val;
-    });
+      });
   }
 
   ngOnDestroy() {
-    if(this.subscription) {
+    if (this.subscription) {
       this.subscription.unsubscribe();
     }
   }

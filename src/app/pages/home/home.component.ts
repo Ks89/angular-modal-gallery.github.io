@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,8 @@ import { Component } from '@angular/core';
 
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 
-const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../../..' : webpack.IMAGE_PATH_PREFIX;
+// const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../../..' : webpack.IMAGE_PATH_PREFIX;
+const PATH = '../..';
 
 @Component({
   selector: 'mmw-home-page',

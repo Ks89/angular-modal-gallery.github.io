@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,9 @@
  * SOFTWARE.
  */
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
+import { Description, Image } from 'angular-modal-gallery';
 
 import * as _ from 'lodash';
 
@@ -46,7 +41,7 @@ export class DescriptionFullCustomComponent {
 
   customFullDescription: Description = {
     // you should build this value programmaticaly with the result of (show)="..()" event
-    customFullDescription: 'Custom description of the current visible image',
+    customFullDescription: 'Custom description of the current visible image'
     // if customFullDescription !== undefined, all other fields will be ignored
     // imageText: '',
     // numberSeparator: '',

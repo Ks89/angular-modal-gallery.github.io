@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,16 +22,20 @@
  * SOFTWARE.
  */
 
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { ROUTES } from './app.routing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
-// Third party opensource libraries (that are using scss/css)
-import 'bootstrap-loader';
-import '../styles/styles.scss';
-import '../styles/headings.css';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { environment } from '../environments/environment';
+
+// import codemirror's modes
+import 'codemirror/mode/htmlmixed/htmlmixed';
+import 'codemirror/mode/javascript/javascript';
 
 // ********************** angular-modal-gallery *****************************
 import 'hammerjs'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save hammerjs @types/hammerjs`)
@@ -39,30 +43,37 @@ import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`np
 import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
 // **************************************************************************
 
-import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { COMPONENTS } from './pages/components';
-import { AppComponent } from './app.component';
+import { COMPONENTS } from './pages/components';
+import { AppComponent } from './app.component';
 
-import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-import { IdlePreloadModule } from '@angularclass/idle-preload';
-import { RouterModule, PreloadAllModules } from '@angular/router';
 import { CodemirrorModule } from 'ng2-codemirror';
 import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
 
 @NgModule({
   imports: [
-    IdlePreloadModule.forRoot(), // forRoot ensures the providers are only created once
-    BrowserModule,
-    HttpModule,
+    // Add .withServerTransition() to support Universal rendering.
+    // The application ID can be any identifier which is unique on
+    // the page.
+    BrowserModule.withServerTransition({appId: 'my-app'}),
+    BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {
+      enabled: environment.production
+    }),
+
+    NgbModule.forRoot(), // forRoot ensures the providers are only created once
+
     CodemirrorModule,
     Ng2PageScrollModule.forRoot(),
-    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
-    SharedModule,
+    ModalGalleryModule.forRoot(),
     CoreModule,
-    ModalGalleryModule.forRoot() // <-------------------------------------------- angular-modal-gallery module import
+    SharedModule
   ],
   declarations: [
     AppComponent,
@@ -73,46 +84,9 @@ import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
 })
 export class AppModule {
 
-  constructor(public appRef: ApplicationRef) {
+  constructor() {
     PageScrollConfig.defaultScrollOffset = 30;
     PageScrollConfig.defaultDuration = 200;
     PageScrollConfig.defaultInterruptible = false;
   }
-  // ----------- Hot Module Replacement via AngularClass library - BEGIN ------------
-  hmrOnInit(store: any): any {
-    if (!store || !store.state) {
-      return;
-    }
-    console.log('HMR store', store);
-    console.log('store.state.data:', store.state.data);
-    // inject AppStore here and update it
-    // this.AppStore.update(store.state)
-    if ('restoreInputValues' in store) {
-      store.restoreInputValues();
-    }
-    // change detection
-    this.appRef.tick();
-    delete store.state;
-    delete store.restoreInputValues;
-  }
-  hmrOnDestroy(store: any): any {
-    let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
-    // recreate elements
-    store.disposeOldHosts = createNewHosts(cmpLocation);
-    // inject your AppStore and grab state then set it on store
-    // var appState = this.AppStore.get()
-    store.state = {data: 'example value'};
-    // store.state = Object.assign({}, appState)
-    // save input values
-    store.restoreInputValues  = createInputTransfer();
-    // remove styles
-    removeNgStyles();
-  }
-  hmrAfterDestroy(store: any): any {
-    // display new elements
-    store.disposeOldHosts();
-    delete store.disposeOldHosts;
-    // anything you need done the component is removed
-  }
-  // ----------- Hot Module Replacement via AngularClass library - END ------------
 }

@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@
  */
 
 import { Component } from '@angular/core';
+import { codemirrorHtml, codemirrorTs } from '../codemirror.config';
 
 @Component({
   selector: 'mmw-migration-page',
@@ -31,9 +32,11 @@ import { Component } from '@angular/core';
 })
 export class MigrationComponent {
 
-  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  configHtml: any = codemirrorHtml;
+  configTs: any = codemirrorTs;
+
   codeHtml: string =
-  `  <div *ngFor="let img of imagesArray; let i = index">
+    `  <div *ngFor="let img of imagesArray; let i = index">
     <div class="float-left" *ngIf="i <= 2">
       <a class="more" *ngIf="i==2" (click)="openImageModal(img)">+{{imagesArray.length - 3}} more </a>
       <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}"
@@ -49,7 +52,7 @@ export class MigrationComponent {
   </div>`;
 
   codeTypescript: string =
-  `  imagesArray: Array<Image>; // init this value with your images
+    `  imagesArray: Array<Image>; // init this value with your images
   openModalWindow: boolean = false;
   imagePointer: number = 0;
   

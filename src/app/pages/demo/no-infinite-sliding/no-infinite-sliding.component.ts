@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,19 +22,15 @@
  * SOFTWARE.
  */
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
+import { Image } from 'angular-modal-gallery';
 
 import * as _ from 'lodash';
 
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
+import { codemirrorHtml } from '../../codemirror.config';
 
 @Component({
   selector: 'mmw-no-infinite-sliding-page',
@@ -45,7 +41,8 @@ export class NoInfiniteSlidingComponent {
 
   imagesArray: Array<Image> = _.cloneDeep(IMAGES_ARRAY);
 
-  config: any = {lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html'};
+  configHtml: any = codemirrorHtml;
+
   codeHtml: string;
 
   constructor(private titleService: TitleService) {

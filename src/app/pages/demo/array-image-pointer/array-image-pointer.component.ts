@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Stefano Cappa
+ * Copyright (c) 2017-2018 Stefano Cappa
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,16 +24,12 @@
 
 import { Component } from '@angular/core';
 
-import {
-  Image,
-  Action,
-  ImageModalEvent,
-  Description
-} from 'angular-modal-gallery';
+import { Action, Image, ImageModalEvent } from 'angular-modal-gallery';
 
 import * as _ from 'lodash';
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
+import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
 
 @Component({
   selector: 'mmw-array-image-pointer-page',
@@ -46,7 +42,9 @@ export class ArrayImagePointerComponent {
   openModalWindow: boolean = false;
   imagePointer: number = 0;
 
-  config: any = { lineNumbers: true, readOnly: true, theme: 'midnight', mode: 'text/html' };
+  configHtml: any = codemirrorHtml;
+  configTs: any = codemirrorTs;
+
   codeHtml: string;
   codeTypescript: string;
 
@@ -54,7 +52,7 @@ export class ArrayImagePointerComponent {
     this.titleService.titleEvent.emit('Demo - Array image pointer');
 
     this.codeHtml =
-  `<div *ngFor="let img of imagesArray; let i = index">
+      `<div *ngFor="let img of imagesArray; let i = index">
     <div class="float-left" *ngIf="i <= 2">
       <a class="more" *ngIf="i==2" (click)="openImageModal(img)">+{{imagesArray.length - 3}} more </a>
       <img *ngIf="img.thumb" class="list-img" src="{{img.thumb}}"
@@ -70,7 +68,7 @@ export class ArrayImagePointerComponent {
   </div>`;
 
     this.codeTypescript =
- `imagesArray: Array<Image>; // init this value with your images
+      `imagesArray: Array<Image>; // init this value with your images
   openModalWindow: boolean = false;
   imagePointer: number = 0;
   

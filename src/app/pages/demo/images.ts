@@ -1,11 +1,8 @@
-import {
-  Image,
-  Description
-} from 'angular-modal-gallery';
+import { Image } from 'angular-modal-gallery';
 
-const PATH: string = webpack.IMAGE_PATH_PREFIX === '' ? '../../../../..' : webpack.IMAGE_PATH_PREFIX;
+const PATH = '../..';
 
-export const IMAGES_ARRAY: Array<Image> = [
+export const IMAGES_ARRAY: Image[] = [
   new Image(
     `${PATH}/assets/images/gallery/img1.jpg`,
     null, // no thumb
