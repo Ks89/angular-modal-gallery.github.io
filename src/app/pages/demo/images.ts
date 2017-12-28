@@ -1,6 +1,6 @@
 import { Image } from 'angular-modal-gallery';
 
-const PATH = '../..';
+const PATH = '';
 
 export const IMAGES_ARRAY: Image[] = [
   new Image(

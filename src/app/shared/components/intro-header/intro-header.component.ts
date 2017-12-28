@@ -24,7 +24,7 @@
 
 import { Component } from '@angular/core';
 
-const PATH = '../../..';
+const PATH = '';
 
 @Component({
   selector: 'mmw-intro-header',
