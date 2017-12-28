@@ -24,7 +24,9 @@
 
 import { Component } from '@angular/core';
 
-const PATH = '';
+import { environment } from '../../../../environments/environment';
+
+const PATH = environment.imgPath;
 
 @Component({
   selector: 'mmw-intro-header',

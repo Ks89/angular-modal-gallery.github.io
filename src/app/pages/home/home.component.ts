@@ -24,9 +24,11 @@
 
 import { Component } from '@angular/core';
 
-import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
+import { Image } from 'angular-modal-gallery';
 
-const PATH = '';
+import { environment } from '../../../environments/environment';
+
+const PATH = environment.imgPath;
 
 @Component({
   selector: 'mmw-home-page',

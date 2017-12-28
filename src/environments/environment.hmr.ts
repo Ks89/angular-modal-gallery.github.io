@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   showDevModule: true,
-  hmr: true
+  hmr: true,
+  imgPath: ''
 };

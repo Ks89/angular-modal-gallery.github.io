@@ -37,7 +37,8 @@
       "environments": {
         "dev": "environments/environment.ts",
         "hmr": "environments/environment.hmr.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "release": "environments/environment.release.ts"
       }
     },
     {
@@ -69,7 +70,8 @@
       "environments": {
         "dev": "environments/environment.ts",
         "hmr": "environments/environment.hmr.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "release": "environments/environment.release.ts"
       },
       "platform": "server"
     }

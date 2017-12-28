@@ -35,27 +35,30 @@ jobs:
           name: run-build-prod
           command: npm run build:prod
       - run:
-          name: run-build-prod-url
-          command: npm run build:prod:url
+          name: run-clean
+          command: npm run clean # clean before the real release build
+      - run:
+          name: run-build-release
+          command: npm run build:release
 #      - run:
 #          name: run-build-prod-ssr
 #          command: npm run build:ssr
-#      - run:
-#          name: run-test
-#          #xvfb-run is used to run npm run to run a command using a virtual screen, which is needed by Chrome.
-#          command: xvfb-run -a npm run test:ci
-#      - run:
-#          name: Install Chromedriver latest version
-#          command: |
-#            sudo apt-get update
-#            sudo apt-get install lsb-release
-#            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#            sudo dpkg -i google-chrome.deb
-#            sudo sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-#            rm google-chrome.deb
-#      - run:
-#          name: run-webdriver-update
-#          command: npm run webdriver:update
+      - run:
+          name: run-test
+          #xvfb-run is used to run npm run to run a command using a virtual screen, which is needed by Chrome.
+          command: xvfb-run -a npm run test:ci
+      - run:
+          name: Install Chromedriver latest version
+          command: |
+            sudo apt-get update
+            sudo apt-get install lsb-release
+            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome.deb
+            sudo sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
+            rm google-chrome.deb
+      - run:
+          name: run-webdriver-update
+          command: npm run webdriver:update
 #      - run:
 #          name: run-e2e
 #          command: xvfb-run -a npm run e2e:ci

@@ -2,5 +2,5 @@ export const environment = {
   production: true,
   showDevModule: false,
   hmr: false,
-  imgPath: ''
+  imgPath: '/angular-modal-gallery.github.io'
 };
