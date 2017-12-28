@@ -11,6 +11,13 @@ npm run clean
 echo "npm run production build on $TRAVIS_OS_NAME"
 npm run build:prod
 
+# clean before the real production build to release
+npm run clean
+
+# run production build to release it on GitHub
+echo "npm run production release build on $TRAVIS_OS_NAME"
+npm run build:prod:url
+
 ## run production build + Server Side Rendering
 #echo "npm run production build + ssr on $TRAVIS_OS_NAME"
 #npm run build:ssr

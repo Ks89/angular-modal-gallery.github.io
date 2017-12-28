@@ -34,6 +34,9 @@ jobs:
       - run:
           name: run-build-prod
           command: npm run build:prod
+      - run:
+          name: run-build-prod-url
+          command: npm run build:prod:url
 #      - run:
 #          name: run-build-prod-ssr
 #          command: npm run build:ssr

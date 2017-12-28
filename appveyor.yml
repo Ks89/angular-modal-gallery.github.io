@@ -130,6 +130,10 @@ build_script:
   - npm run clean
   - echo "npm run production build on $TRAVIS_OS_NAME"
   - npm run build:prod
+  # run production build to release it on GitHub
+  - npm run clean
+  - echo "npm run production release build on $TRAVIS_OS_NAME"
+  - npm run build:prod:url
   # run production build with server side rendering
 #  - npm run build:ssr
 
