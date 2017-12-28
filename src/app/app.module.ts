@@ -27,11 +27,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { ServiceWorkerModule } from '@angular/service-worker';
+// import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { environment } from '../environments/environment';
+// import { environment } from '../environments/environment';
 
 // import codemirror's modes
 import 'codemirror/mode/htmlmixed/htmlmixed';
@@ -63,9 +63,9 @@ import { Ng2PageScrollModule, PageScrollConfig } from 'ng2-page-scroll';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {
-      enabled: environment.production
-    }),
+    // ServiceWorkerModule.register('/ngsw-worker.js', {
+    //   enabled: environment.production
+    // }),
 
     NgbModule.forRoot(), // forRoot ensures the providers are only created once
 
