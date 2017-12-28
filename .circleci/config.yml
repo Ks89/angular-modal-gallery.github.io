@@ -8,6 +8,9 @@ jobs:
         environment:
           NODE_ENV: test
           CI: yes
+    branches:
+      ignore:
+        - gh-pages
     steps:
       - checkout
       - run:
